@@ -145,10 +145,10 @@ module.exports = {
         collapseWHiteSpace: isProd
       },
     }),
-    new webpack.SourceMapDevToolPlugin({
-      filename: '[name][ext].map',
-      // exclude: ['bundle.js'],
-    }),
+    // new webpack.SourceMapDevToolPlugin({
+    //   filename: '[name][ext].map',
+    //   // exclude: ['bundle.js'],
+    // }),
   ],
   module: {
     rules: [
@@ -162,7 +162,7 @@ module.exports = {
         include: `${PATHS.src}/App/fonts/`,
         loader: 'file-loader',
         options: {
-          name: 'fonts/[name].[ext]'
+          name: 'fonts/[name].[hash].[ext]'
         },
       },
       {
