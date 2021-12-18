@@ -10,7 +10,7 @@ interface ButtonProps {
   text?: string,
   size?: 'default' | 'md' | undefined,
   width?: 'auto' | 'full-wide' | undefined,
-  theme?: Array<'purple' | 'white' | 'adaptedForHeader'> | undefined,
+  theme?: Array<'purple' | 'white' | 'adaptedForHeader' | 'theme_arrow'> | undefined,
 }
 
 const Button = ({
@@ -48,6 +48,9 @@ const Button = ({
   }
   if (theme.indexOf('adaptedForHeader') != -1) {
     classes.push(styles.adaptedForHeader);
+  }
+  if (theme.indexOf('theme_arrow') != -1) {
+    classes.push(styles.theme_arrow);
   }
 
   if (href) {
