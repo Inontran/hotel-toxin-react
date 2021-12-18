@@ -1,0 +1,40 @@
+{
+  "extends": [
+    // "plugin:@typescript-eslint/recommended",
+    // "plugin:import/typescript",
+    // "plugin:jest/recommended",
+    // "plugin:react/recommended",
+    "airbnb-typescript"
+  ],
+  "rules": {
+    "max-len": [
+      "error",
+      {
+        "code": 120
+      }
+    ],
+    // добавил это исключение, так линтер не понимает алиесы webpack
+    "import/no-unresolved": 0,
+    "no-new": 1
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "tsconfig.json",
+    "tsconfigRootDir": ".",
+    "jsx": true,
+    "sourceType": "module",
+    "useJSXTextNode": true
+  },
+  "plugins": [
+    "@typescript-eslint",
+    "import",
+    "jest",
+    "react"
+  ],
+  "env": {
+    "browser": true,
+    "es6": true,
+    "jest": true,
+    "node": true
+  }
+}
