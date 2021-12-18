@@ -64,6 +64,7 @@ const getStyleLoaders = (cssOptions, preProcessor) => {
       //   ? { publicPath: '../../' }
       //   : {},
     },
+    'css-modules-typescript-loader',
     {
       loader: require.resolve('css-loader'),
       options: cssOptions,
@@ -126,7 +127,7 @@ module.exports = {
     publicPath: '',
   },
   devServer: {
-    port: 3000,
+    port: 4200,
     hot: isDev,
     open: true,
     static: PATHS.dist,

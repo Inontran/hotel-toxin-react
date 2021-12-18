@@ -1,0 +1,42 @@
+$xxs: 320px;
+$xs:  575px;
+$sm:  767px;
+$md:  991px;
+$lg:  1199px;
+$xl:  1440px;
+
+$dark:  #1f2041;
+$dark75:  rgba(#1f2041, 0.75);
+$dark50:  rgba(#1f2041, 0.5);
+$dark30:  rgba(#1f2041, 0.3);
+$dark25:  rgba(#1f2041, 0.25);
+$dark10:  rgba(#1f2041, 0.1);
+$dark5:   rgba(#1f2041, 0.05);
+$white: #fff;
+$purple:#bc9cff;
+$green: #6fcf97;
+$black: #000;
+
+$colors:(
+  'dark'  :   $dark,
+  'dark75':   $dark75,
+  'dark50':   $dark50,
+  'dark30':   $dark30,
+  'dark25':   $dark25,
+  'dark5'  :  $dark5,
+  'white'  :  $white,
+  'purple':   $purple,
+  'green'  :  $green,
+  'black'  :  $black,
+);
+
+$gradient-purple: linear-gradient(180deg, #{$purple} 0%, #8ba4f9 100%);
+$gradient-green: linear-gradient(180deg, #{$green} 0%, #66d2ea 100%);
+$gradient-yellow: linear-gradient(180deg, #ffe39c 0%, #ffba9c 100%);
+$gradient-gray: linear-gradient(180deg, #919191 0%, #3d4975 100%);
+
+$font-size-base: 14;
+
+$gutter: 40px;
+$max-width-container: 1180px;
+$padding-container: 10px;

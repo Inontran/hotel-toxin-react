@@ -1,0 +1,128 @@
+@import '../../global-styles/variables.scss';
+@import '../../global-styles/functions.scss';
+
+.Button {
+  position: relative;
+  background: none;
+  border: none;
+  font-family: 'Montserrat', sans-serif;
+  font-size: calc-rem(12);
+  text-transform: uppercase;
+  font-weight: 700;
+  line-height: 1.25;
+  color: $purple;
+  transition: 0.3s;
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+  padding: 0;
+
+  &:hover {
+    color: $dark50;
+  }
+}
+
+.Text {
+  position: relative;
+  z-index: 2;
+  text-decoration: none;
+}
+
+.filled_blueGreenGradient {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 100vh;
+  color: $white;
+  padding: calc-rem(5) calc-rem(20);
+  min-height: calc-rem(44);
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: $gradient-purple;
+    transition: 0.3s;
+  }
+
+  &:hover {
+    color: $white;
+
+    &::before {
+      opacity: 0.5;
+    }
+  }
+}
+
+.outlined {
+  @extend .filled_blueGreenGradient;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: calc(100% - 4px);
+    height: calc(100% - 4px);
+    background: $white;
+    border-radius: 100vh;
+  }
+
+  &,
+  &:hover {
+    color: $purple;
+  }
+}
+
+.wide {
+  width: 100%;
+}
+
+.theme_arrow {
+  padding: calc-rem(5) calc-rem(35);
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    background-image: url(../../shared/img/arrow-forward.svg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 18px;
+    height: 18px;
+  }
+}
+
+.size_md {
+  min-height: calc-rem(34);
+}
+
+.adaptedForHeader {
+  @media (max-width: $lg) {
+    font-size: 1rem;
+    text-transform: none;
+    text-align: center;
+    border: 0;
+    padding: 13px 10px;
+    display: flex;
+
+    &,
+    &:hover {
+      color: $dark50;
+      font-weight: 400;
+    }
+
+    &::after,
+    &::before {
+      content: none;
+    }
+  }
+}
