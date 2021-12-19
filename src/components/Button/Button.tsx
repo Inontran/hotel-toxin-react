@@ -26,7 +26,7 @@ interface ButtonProps {
    * @type {string}
    * @defaultvalue 'button'
    */
-  type?: 'button' | 'submit' | 'reset' | undefined,
+  type?: 'button' | 'submit' | 'reset',
 
   /**
    * @description Текст кнопки.
@@ -40,20 +40,20 @@ interface ButtonProps {
    * @type {string}
    * @defaultvalue 'default'
    */
-  size?: 'default' | 'md' | undefined,
+  size?: 'default' | 'md',
 
   /**
    * @description Ширина кнопки.
    * @type {string}
    * @defaultvalue 'auto'
    */
-  width?: 'auto' | 'full-wide' | undefined,
+  width?: 'auto' | 'full-wide',
 
   /**
    * @description Темы оформления кнопки. Некоторые можно групировать друг с другом, а некоторые нельзя.
    * @type {Array<string>}
    */
-  theme?: Array<'purple' | 'white' | 'adaptedForHeader' | 'theme_arrow'> | undefined,
+  theme?: Array<'purple' | 'white' | 'adaptedForHeader' | 'theme_arrow'>,
 }
 
 const Button = ({

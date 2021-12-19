@@ -1,0 +1,122 @@
+@import '../../global-styles/variables.scss';
+@import '../../global-styles/functions.scss';
+
+.Checkbox {
+  display: block;
+  line-height: 0.6;
+
+  & .Wrapper {
+    display: inline-flex;
+  }
+
+  & .Input {
+    display: none;
+  }
+
+  & .CustomInput {
+    position: relative;
+    display: inline-block;
+    width: calc-rem(20);
+    height: calc-rem(20);
+    border-radius: 4px;
+    background: $white;
+    border: 1px solid $dark25;
+    transition: 0.2s;
+    flex: none;
+    cursor: pointer;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 3px;
+      left: 4px;
+      width: 10px;
+      height: 11px;
+      background-image: url(../../shared/img/check-icon.svg);
+      background-position: center;
+      background-size: auto;
+      background-repeat: no-repeat;
+      opacity: 0;
+      transition: 0.2s;
+    }
+  }
+
+  & .Input:checked ~ .CustomInput {
+    border-color: $purple;
+
+    &::after {
+      opacity: 1;
+    }
+  }
+
+  & .TextWrapper {
+    padding-left: 10px;
+    cursor: pointer;
+  }
+
+  & .Title {
+    display: block;
+    font-size: calc-rem(14);
+    font-weight: 700;
+    color: $dark75;
+    margin: 2px 0 5px;
+    line-height: 1.2857;
+  }
+
+  & .Text {
+    display: block;
+    line-height: 1.28;
+    font-size: calc-rem(14);
+    color: $dark50;
+    padding-top: 3px;
+  }
+
+  & .SmallText {
+    display: block;
+    line-height: 1.16;
+    font-size: calc-rem(12);
+    color: $dark50;
+  }
+
+  & .Input:disabled ~ .CustomInput,
+  & .Input:disabled ~ .TextWrapper {
+    cursor: default;
+  }
+}
+
+.type_toggle {
+  & .CustomInput {
+    width: calc-rem(40);
+    height: calc-rem(20);
+    border-radius: 100vh;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: calc-rem(4);
+      transform: translateY(-50%);
+      width: calc-rem(12);
+      height: calc-rem(12);
+      background: $dark25;
+      border-radius: 100vh;
+      opacity: 1;
+      transition: left 0.2s;
+    }
+  }
+
+  .Input:checked ~ .CustomInput {
+    border-color: $purple;
+
+    &::after {
+      left: calc(100% - #{calc-rem(4)} - #{calc-rem(12)});
+      background: $gradient-purple;
+    }
+  }
+
+  .Text {
+    color: $dark75;
+    padding-top: 1px;
+    cursor: pointer;
+  }
+}

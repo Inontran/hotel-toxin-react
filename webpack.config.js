@@ -25,7 +25,7 @@ const imagesLoaders = [
   {
     loader: 'file-loader',
     options: {
-      name: 'img/[path][name].[hash].[ext]'
+      name: 'img/[name].[hash].[ext]'
     }
   }
 ];
