@@ -46,6 +46,11 @@ npm run storybook
 npm run build-storybook
 ```
 
+Получить документацию из комментариев формата JSDoc:
+```
+npm run doc:build
+```
+
 
 Проверка js/ts кода с помощью eslint:
 ```
