@@ -71,3 +71,8 @@ npm run stylelint
 ```
 npm run stylelint:fix
 ```
+
+Вывод в консоль конфигурацию stylelint:
+```
+npm run stylelint:dump
+```

@@ -13,7 +13,8 @@
     "eslint:fix": "eslint --cache --fix --ext .js,.jsx,.ts,.tsx src",
     "eslint:dump": "eslint --print-config ./.eslintrc.json",
     "stylelint": "stylelint 'src/**/*.{css,scss,sass}'",
-    "stylelint:fix": "stylelint 'src/**/*.{css,scss,sass}' --fix"
+    "stylelint:fix": "stylelint 'src/**/*.{css,scss,sass}' --fix",
+    "stylelint:dump": "stylelint --print-config ./.stylelintrc.json"
   },
   "repository": {
     "type": "git",
@@ -95,6 +96,7 @@
     "stylelint": "^14.1.0",
     "stylelint-config-standard": "^24.0.0",
     "stylelint-scss": "^4.0.1",
+    "stylelint-selector-bem-pattern": "^2.1.1",
     "ts-loader": "^9.2.6",
     "typescript": "^4.5.3",
     "webpack": "^5.65.0",
