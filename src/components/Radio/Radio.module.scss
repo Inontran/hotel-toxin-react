@@ -1,0 +1,70 @@
+@import '../../global-styles/variables.scss';
+@import '../../global-styles/functions.scss';
+
+.Radio {
+  display: block;
+  line-height: 0.6;
+
+  & .Wrapper {
+    display: inline-flex;
+  }
+
+  & .Input {
+    display: none;
+  }
+
+  & .CustomInput {
+    position: relative;
+    display: inline-block;
+    width: calc-rem(20);
+    height: calc-rem(20);
+    border-radius: 100vh;
+    background: $white;
+    border: 1px solid $dark25;
+    transition: 0.2s;
+    cursor: pointer;
+    flex: none;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: calc-rem(12);
+      height: calc-rem(12);
+      background: $gradient-purple;
+      border-radius: 100vh;
+      opacity: 0;
+      transition: 0.2s;
+    }
+  }
+
+  & .Input:checked ~ .CustomInput {
+    border-color: $purple;
+
+    &::after {
+      opacity: 1;
+    }
+  }
+
+  & .Text {
+    line-height: 1.28;
+    font-size: calc-rem(14);
+    color: $dark50;
+    padding-left: 10px;
+    padding-top: 1px;
+    transition: color 0.2s;
+    cursor: pointer;
+  }
+
+  & .Input:checked ~ .CustomInput,
+  & .Input:checked ~ .Text {
+    color: $dark75;
+  }
+
+  & .Input:disabled ~ .CustomInput,
+  & .Input:disabled ~ .Text {
+    cursor: default;
+  }
+}

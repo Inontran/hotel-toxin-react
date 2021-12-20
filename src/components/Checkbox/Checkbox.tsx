@@ -20,7 +20,7 @@ interface CheckboxProps {
    * @type {string}
    * @defaultvalue 'checkbox'
    */
-  type?: 'checkbox' | 'radio',
+  inputType?: 'checkbox' | 'radio',
 
   /**
    * @description Текст чекбокса.
@@ -62,7 +62,7 @@ interface CheckboxProps {
 const Checkbox = ({
   id = undefined,
   tabIndex = undefined,
-  type = 'checkbox',
+  inputType = 'checkbox',
   text = undefined,
   title = undefined,
   name = undefined,
@@ -85,7 +85,7 @@ const Checkbox = ({
     >
       <label className = { styles.Wrapper }>
         <input className = { styles.Input }
-          type = { type || undefined }
+          type = { inputType || undefined }
           tabIndex = { tabIndex || undefined }
           name = { name || undefined }
           value = { value || undefined }
