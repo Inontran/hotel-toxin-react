@@ -5,6 +5,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const postcssNormalize = require('postcss-normalize');
 const getCSSModuleLocalIdent = require('react-dev-utils/getCSSModuleLocalIdent');
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
 const isDev = process.env.NODE_ENV === 'development';
 const isProd = process.env.NODE_ENV === 'production';
@@ -58,11 +59,6 @@ const getStyleLoaders = (cssOptions, preProcessor) => {
     isDev && require.resolve('style-loader'),
     isProd && {
       loader: MiniCssExtractPlugin.loader,
-      // css is located in `static/css`, use '../../' to locate index.html folder
-      // in production `paths.publicUrlOrPath` can be a relative path
-      // options: paths.publicUrlOrPath.startsWith('.')
-      //   ? { publicPath: '../../' }
-      //   : {},
     },
     'css-modules-typescript-loader',
     {
@@ -150,17 +146,31 @@ module.exports = {
     //   filename: '[name][ext].map',
     //   // exclude: ['bundle.js'],
     // }),
+    new FaviconsWebpackPlugin({
+      logo: PATHS.src + '/shared/img/logo-mini.svg',
+      cache: true,
+      publicPath: '',
+      outputPath: 'favicons',
+      prefix: 'favicons/',
+      inject: true,
+      lang: 'ru-RU',
+      favicons: {
+        background: '#fff',
+        theme_color: '#BC9CFF',
+        version: '1.0',
+      },
+    }),
   ],
   module: {
     rules: [
       {
         test: /\.(png|jpe?g|svg|gif)$/i,
-        exclude: `${PATHS.src}/App/fonts/`,
+        exclude: `${PATHS.src}/global-styles/fonts/`,
         use: imagesLoaders,
       },
       {
         test: /\.(ttf|woff|woff2|eot|svg)$/i,
-        include: `${PATHS.src}/App/fonts/`,
+        include: `${PATHS.src}/global-styles/fonts/`,
         loader: 'file-loader',
         options: {
           name: 'fonts/[name].[hash].[ext]'
