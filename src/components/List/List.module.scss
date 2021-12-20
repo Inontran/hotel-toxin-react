@@ -1,0 +1,46 @@
+@import '../../global-styles/variables.scss';
+@import '../../global-styles/functions.scss';
+
+.List {
+  margin: 0;
+  padding: 0;
+
+  &.withGrayItems {
+    padding: 10px 20px 0;
+
+    .Item {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .ItemLink {
+      color: $dark50;
+      text-decoration: none;
+      font-weight: 400;
+    }
+  }
+
+  &.withBigDots {
+    .Item {
+      position: relative;
+      color: $dark75;
+      list-style: none;
+      padding-left: calc-rem(20);
+
+      &:not(:last-of-type) {
+        margin-bottom: 10px;
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 6px;
+        left: 0;
+        width: calc-rem(10);
+        height: calc-rem(10);
+        border-radius: 100vh;
+        background: $dark25;
+      }
+    }
+  }
+}
