@@ -1,0 +1,20 @@
+@import '../../global-styles/functions.scss';
+
+.Heading {
+  font-weight: 700;
+  line-height: 1.25;
+  margin: 0;
+
+  &.size_large {
+    font-size: calc-rem(24);
+  }
+
+  &.size_middle {
+    font-size: calc-rem(19);
+  }
+
+  &.size_small {
+    font-size: calc-rem(12);
+    text-transform: uppercase;
+  }
+}

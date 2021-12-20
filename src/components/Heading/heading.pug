@@ -1,0 +1,63 @@
+//-
+  options.classes - Классы блока.
+  options.id - ИД блока.
+  options.text - Текст в заголовке.
+  options.tag - HTML-тег заголовка. По умолчанию используется '<p></p>'.
+
+mixin heading(options = {})
+  -
+    const {
+      classes = '',
+      id = false,
+      text = '',
+      tag = 'p',
+    } = options;
+
+  case tag
+    when 'h1'
+      h1.heading(
+        class = classes, 
+        id = id ? id : false
+      ) #{text}
+
+    when 'h2'
+      h2.heading(
+        class = classes, 
+        id = id ? id : false
+      ) #{text}
+    
+    when 'h3'
+      h3.heading(
+        class = classes, 
+        id = id ? id : false
+      ) #{text}
+
+    when 'h4'
+      h4.heading(
+        class = classes, 
+        id = id ? id : false
+      ) #{text}
+
+    when 'h5'
+      h5.heading(
+        class = classes, 
+        id = id ? id : false
+      ) #{text}
+
+    when 'h6'
+      h6.heading(
+        class = classes, 
+        id = id ? id : false
+      ) #{text}
+
+    when 'span'
+      span.heading(
+        class = classes, 
+        id = id ? id : false
+      ) #{text}
+
+    default
+      p.heading(
+        class = classes, 
+        id = id ? id : false
+      ) #{text}
