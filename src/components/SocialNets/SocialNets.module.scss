@@ -1,0 +1,21 @@
+.SocialNets {
+  display: inline-grid;
+  grid-auto-flow: column;
+  column-gap: 20px;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+
+  & .Item {
+    list-style: none;
+  }
+
+  & .Link {
+    display: flex;
+  }
+
+  & .Icon {
+    flex: none;
+  }
+}
