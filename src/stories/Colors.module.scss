@@ -1,0 +1,29 @@
+.Colors {
+  & .Item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+
+  & .Rect {
+    width: 70px;
+    height: 70px;
+    border-radius: 6px;
+    overflow: hidden;
+    flex: none;
+    margin-right: 40px;
+  }
+
+  & .Title {
+    display: block;
+    font-size: 1.35714rem;
+    font-weight: 700;
+    line-height: 1.25;
+    margin: 0;
+  }
+
+  & .Text {
+    display: block;
+    font-size: 1.35714rem;
+  }
+}
