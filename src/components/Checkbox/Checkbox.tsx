@@ -1,63 +1,7 @@
 import React from 'react';
 
+import CheckboxProps from './CheckboxProps';
 import styles from './Checkbox.module.scss';
-
-interface CheckboxProps {
-  /**
-   * @description id блока.
-   * @type {string}
-   */
-  id?: string,
-
-  /**
-   * @description Tabindex чекбокса.
-   * @type {number}
-   */
-  tabIndex?: number,
-
-  /**
-   * @description Тип поля чекбокса. По умолчанию "checkbox".
-   * @type {string}
-   * @defaultvalue 'checkbox'
-   */
-  inputType?: 'checkbox' | 'radio',
-
-  /**
-   * @description Текст чекбокса.
-   * @type {string}
-   */
-  text?: string,
-
-  /**
-   * @description Заголовок чекбокса.
-   * @type {string}
-   */
-  title?: string,
-
-  /**
-   * @description Имя поля чекбокса.
-   * @type {string}
-   */
-  name?: string,
-
-  /**
-   * @description Значение input чекбокса (атрибут value).
-   * @type {string | number}
-   */
-  value?: string | number,
-
-  /**
-   * @description Выбран ли чекбокс или нет (атрибут checked).
-   * @type {boolean}
-   */
-  checked?: boolean,
-
-  /**
-   * @description Темы оформления чекбокса. Некоторые можно групировать друг с другом, а некоторые нельзя.
-   * @type {Array<string>}
-   */
-  theme?: Array<'type_toggle'>,
-}
 
 const Checkbox = ({
   id = undefined,

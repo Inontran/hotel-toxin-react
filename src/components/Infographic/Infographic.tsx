@@ -1,40 +1,7 @@
 import React from 'react';
 
+import InfographicProps from './InfographicProps';
 import styles from './Infographic.module.scss';
-
-interface InfographicItem {
-  /**
-   * Путь до иконки.
-   * @type {string}
-   */
-  src?: string,
-
-  /**
-   * Заголовок в пункте списка.
-   * @type {string}
-   */
-  title?: string,
-
-  /**
-   * Текст в пункте списка.
-   * @type {string}
-   */
-  text?: string,
-}
-
-interface InfographicProps {
-  /**
-   * @description id блока.
-   * @type {string}
-   */
-  id?: string,
-
-  /**
-  * @description Массив пуктов списка.
-  * @type {Array<InfographicItem>}
-  */
-  items?: Array<InfographicItem>,
-}
 
 const Infographic = ({
   id = undefined,

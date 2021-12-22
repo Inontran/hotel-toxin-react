@@ -1,46 +1,7 @@
 import React from 'react';
 
+import SocialNetsProps from './SocialNetsProps';
 import styles from './SocialNets.module.scss';
-
-interface SocialNetsItem {
-  /**
-   * Адрес ссылки.
-   * @type {string}
-   */
-  href: string,
-
-  /**
-   * Путь до иконки.
-   * @type {string}
-   */
-  src: string,
-
-  /**
-   * Текст иконки.
-   * @type {string}
-   */
-  alt?: string,
-
-  /**
-   * Подсказка иконки.
-   * @type {string}
-   */
-  title?: string,
-}
-
-interface SocialNetsProps {
-  /**
-   * @description id блока.
-   * @type {string}
-   */
-  id?: string,
-
-  /**
-  * @description Массив пуктов списка.
-  * @type {Array<SocialNetsItem>}
-  */
-  items?: Array<SocialNetsItem>,
-}
 
 const SocialNets = ({
   id = undefined,

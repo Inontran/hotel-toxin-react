@@ -1,33 +1,7 @@
 import React from 'react';
 
+import HeadingProps from './HeadingProps';
 import styles from './Heading.module.scss';
-
-interface HeadingProps {
-  /**
-   * @description id блока.
-   * @type {string}
-   */
-  id?: string,
-
-  /**
-   * @description Текст в заголовке.
-   * @type {string}
-   */
-  text?: string,
-
-  /**
-   * @description HTML-тег заголовка. По умолчанию используется '<p></p>'.
-   * @type {string}
-   * @defaultvalue 'p'
-   */
-  tag?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'span',
-
-  /**
-   * @description Текст в заголовке.
-   * @type {string}
-   */
-  size?: 'large' | 'middle' | 'small',
-}
 
 const Heading = ({
   id = undefined,

@@ -1,60 +1,7 @@
 import React from 'react';
 
+import ButtonProps from './ButtonProps';
 import styles from './Button.module.scss';
-
-interface ButtonProps {
-  /**
-   * @description id блока.
-   * @type {string}
-   */
-  id?: string,
-
-  /**
-   * @description Ссылка кнопки. Если есть эта опция, то тег будет "а", иначе "button".
-   * @type {string}
-   */
-  href?: string,
-
-  /**
-   * @description Tabindex кнопки.
-   * @type {number}
-   */
-  tabIndex?: number,
-
-  /**
-   * @description Тип кнопки. По умолчанию "button".
-   * @type {string}
-   * @defaultvalue 'button'
-   */
-  type?: 'button' | 'submit' | 'reset',
-
-  /**
-   * @description Текст кнопки.
-   * @type {string}
-   * @defaultvalue 'Click me'
-   */
-  text?: string,
-
-  /**
-   * @description Размер кнопки.
-   * @type {string}
-   * @defaultvalue 'default'
-   */
-  size?: 'default' | 'md',
-
-  /**
-   * @description Ширина кнопки.
-   * @type {string}
-   * @defaultvalue 'auto'
-   */
-  width?: 'auto' | 'full-wide',
-
-  /**
-   * @description Темы оформления кнопки. Некоторые можно групировать друг с другом, а некоторые нельзя.
-   * @type {Array<string>}
-   */
-  theme?: Array<'purple' | 'white' | 'adaptedForHeader' | 'theme_arrow'>,
-}
 
 const Button = ({
   id = undefined,

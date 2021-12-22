@@ -1,40 +1,7 @@
 import React from 'react';
 
+import ListProps from './ListProps';
 import styles from './List.module.scss';
-
-interface ListItem {
-  /**
-   * Ссылка в пункте списка.
-   * @type {string}
-   */
-  href?: string;
-
-  /**
-   * Текст в пункте списка.
-   * @type {string}
-   */
-  text: string;
-}
-
-interface ListProps {
-  /**
-   * @description id блока.
-   * @type {string}
-   */
-  id?: string,
-
-  /**
-   * @description Массив пуктов списка.
-   * @type {Array<ListItem>}
-   */
-  items?: Array<ListItem>,
-
-  /**
-   * @description Темы оформления списка. Некоторые можно групировать друг с другом, а некоторые нельзя.
-   * @type {Array<string>}
-   */
-  theme?: Array<'withGrayItems' | 'withBigDots'>,
-}
 
 const List = ({
   id = undefined,
