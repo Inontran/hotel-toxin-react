@@ -1,0 +1,55 @@
+@import '../../global-styles/variables.scss';
+@import '../../global-styles/functions.scss';
+
+.Expander {
+  .Btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 0;
+    background: none;
+    box-shadow: none;
+    width: 100%;
+    min-height: calc-rem(44);
+    cursor: pointer;
+    padding: 0;
+
+    &Text {
+      font-size: 0.85714rem;
+      font-weight: 700;
+      line-height: 1.25;
+      text-transform: uppercase;
+    }
+
+    &Arrow {
+      display: inline-block;
+      width: 12px;
+      height: 8px;
+      background-image: url(../../shared/img/arrow-down-gray.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 100% 100%;
+      fill: $dark50;
+      margin: 0 calc((#{calc-rem(44)} - 12px) / 2);
+      transform: rotate(0);
+      transition: 0.3s;
+      flex: none;
+    }
+  }
+
+  .Content {
+    max-height: 0;
+    overflow: hidden;
+    transition: 0.3s;
+  }
+
+  &.activated {
+    .BtnArrow {
+      transform: rotate(-180deg);
+    }
+
+    .Content {
+      max-height: 200vh;
+    }
+  }
+}

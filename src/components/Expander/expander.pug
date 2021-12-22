@@ -1,0 +1,29 @@
+//-
+  options.classes - Классы блока.
+  options.id - ИД блока.
+  options.group - Группа раскрывающихся списков. 
+    Если задать этот параметр с одинаковым значением у нескольких списков,
+    то при раскрытии одного списка все остальные из этой группы будут закрываться.
+  options.text - Текст в кнопке раскрывающего списка.
+
+mixin expander(options = {})
+  -
+    const {
+      classes = '',
+      id = false,
+      title = false,
+      text = false,
+      group = false,
+    } = options;
+
+  div.expander.js-expander(
+    class = classes,
+    id = id ? id : false
+    data-group = group ? group : false,
+  )
+    button.expander__btn.js-expander__btn(type = 'button')
+      span.expander__btn-text #{text}
+      span.expander__btn-arrow
+    div.expander__content
+      div.expander__content-wrapper
+        block
