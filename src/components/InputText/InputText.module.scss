@@ -1,0 +1,49 @@
+@import '../../global-styles/variables.scss';
+@import '../../global-styles/functions.scss';
+
+.InputText {
+  display: block;
+  position: relative;
+
+  .Label {
+    display: block;
+    line-height: 0.5;
+    padding-bottom: 5px;
+  }
+
+  .Field {
+    border-radius: 4px;
+    background: $white;
+    border: 1px solid $dark25;
+    font-size: calc-rem(14);
+    line-height: 1.2857;
+    padding: 12px 15px;
+    min-height: calc-rem(44);
+    width: 100%;
+    color: $dark75;
+
+    &::placeholder {
+      color: $dark25;
+    }
+
+    &:hover,
+    &:focus {
+      border: 1px solid $dark50;
+    }
+  }
+
+  &.theme_subscription,
+  &.theme_dropdown {
+    .Field {
+      padding-right: calc-rem(44);
+    }
+  }
+
+  &.theme_dropdown {
+    .Field {
+      &::placeholder {
+        color: $dark75;
+      }
+    }
+  }
+}
