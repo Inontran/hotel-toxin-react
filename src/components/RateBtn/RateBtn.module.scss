@@ -1,0 +1,47 @@
+@import '../../global-styles/functions.scss';
+
+.RateBtn {
+  display: inline-flex;
+  align-items: center;
+  margin: 0 1px;
+
+  .StarItem {
+    display: block;
+    width: calc-rem(20);
+    height: calc-rem(19);
+    background-image: url(../../shared/img/star-purple-o.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 2px;
+    outline: none;
+    background-color: transparent;
+    border: 0;
+    box-shadow: none;
+    cursor: pointer;
+
+    &:focus {
+      outline: dotted 1px;
+    }
+
+    &:active {
+      outline: none;
+    }
+
+    &:disabled {
+      cursor: default;
+    }
+  }
+
+  @for $i from 0 through 5 {
+    .Input {
+      &[value^="#{$i}"] {
+        @for $j from 0 through $i {
+          & ~ .StarItem[value="#{$j}"] {
+            background-image: url(../../shared/img/star-purple.svg);
+          }
+        }
+      }
+    }
+  }
+}
