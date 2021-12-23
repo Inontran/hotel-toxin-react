@@ -4,12 +4,13 @@ import LikeBtnProps from './LikeBtnProps';
 import styles from './LikeBtn.module.scss';
 
 class LikeBtn extends React.PureComponent<LikeBtnProps> {
-  constructor({
-    value = 0,
-    name = 'like',
-    isLike = false,
-    ...props
-  }: LikeBtnProps) {
+  static defaultProps: LikeBtnProps = {
+    value: 0,
+    name: 'like',
+    isLike: false,
+  }
+
+  constructor(props: LikeBtnProps) {
     super(props);
   }
 
