@@ -1,3 +1,7 @@
+import ButtonSizes from './ButtonSizes';
+import ButtonThemes from './ButtonThemes';
+import ButtonWidth from './ButtonWidth';
+
 interface ButtonProps {
   /**
    * id блока.
@@ -28,20 +32,18 @@ interface ButtonProps {
 
   /**
    * Размер кнопки.
-   * @default 'default'
    */
-  size?: 'default' | 'md',
+  size?: ButtonSizes,
 
   /**
    * Ширина кнопки.
-   * @default 'auto'
    */
-  width?: 'auto' | 'full-wide',
+  width?: ButtonWidth,
 
   /**
    * Темы оформления кнопки. Некоторые можно групировать друг с другом, а некоторые нельзя.
    */
-  theme?: Array<'purple' | 'white' | 'adaptedForHeader' | 'theme_arrow'>,
+  theme?: Array<ButtonThemes>,
 }
 
 export default ButtonProps;

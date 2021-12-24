@@ -1,6 +1,7 @@
 import React from 'react';
 
 import CheckboxProps from './CheckboxProps';
+import CheckboxThemes from './CheckboxThemes';
 import styles from './Checkbox.module.scss';
 
 const Checkbox = ({
@@ -17,7 +18,7 @@ const Checkbox = ({
 }: CheckboxProps) => {
   const classes = [styles.Checkbox];
 
-  if (theme.indexOf('type_toggle') != -1) {
+  if (theme.indexOf(CheckboxThemes.toggle) != -1) {
     classes.push(styles.type_toggle);
   }
 

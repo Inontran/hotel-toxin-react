@@ -1,6 +1,7 @@
 import React from 'react';
 
 import HeadingProps from './HeadingProps';
+import HeadingSizes from './HeadingSizes';
 import styles from './Heading.module.scss';
 
 const Heading = ({
@@ -13,15 +14,15 @@ const Heading = ({
   const classes = [styles.Heading];
 
   switch (size) {
-    case 'large':{
+    case HeadingSizes.large:{
       classes.push(styles.size_large);
       break;
     }
-    case 'middle':{
+    case HeadingSizes.middle:{
       classes.push(styles.size_middle);
       break;
     }
-    case 'small':{
+    case HeadingSizes.small:{
       classes.push(styles.size_small);
       break;
     }

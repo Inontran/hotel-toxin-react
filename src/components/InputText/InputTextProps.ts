@@ -1,3 +1,5 @@
+import InputTextThemes from './InputTextThemes';
+
 interface InputTextProps {
   /**
    * id блока.
@@ -43,12 +45,12 @@ interface InputTextProps {
   /**
    * Темы оформления текстового поля. Некоторые можно групировать друг с другом, а некоторые нельзя.
    */
-  theme?: Array<'theme_subscription' | 'theme_dropdown'>
+  theme?: Array<InputTextThemes>
 
   /**
    * Маска ввода.
    */
-  inputMask?: 'date' | 'email' | string,
+  inputPattern?: 'date' | 'email' | string,
 }
 
 export default InputTextProps;

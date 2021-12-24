@@ -1,3 +1,5 @@
+import HeadingSizes from './HeadingSizes';
+
 interface HeadingProps {
   /**
    * id блока.
@@ -18,7 +20,7 @@ interface HeadingProps {
   /**
    * Текст в заголовке.
    */
-  size?: 'large' | 'middle' | 'small',
+  size?: HeadingSizes,
 }
 
 export default HeadingProps;

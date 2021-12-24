@@ -1,6 +1,9 @@
 import React from 'react';
 
 import ButtonProps from './ButtonProps';
+import ButtonSizes from './ButtonSizes';
+import ButtonThemes from './ButtonThemes';
+import ButtonWidth from './ButtonWidth';
 import styles from './Button.module.scss';
 
 const Button = ({
@@ -9,37 +12,37 @@ const Button = ({
   tabIndex = undefined,
   type = 'button',
   text = 'Click me',
-  size = 'default',
-  width = 'auto',
+  size = undefined,
+  width = undefined,
   theme = [],
   ...props
 }: ButtonProps) => {
   const classes = [styles.Button];
 
   switch (size) {
-    case 'md':{
+    case ButtonSizes.md:{
       classes.push(styles.size_md);
       break;
     }
   };
 
   switch (width) {
-    case 'full-wide':{
+    case ButtonWidth.fullWidth:{
       classes.push(styles.wide);
       break;
     }
   };
 
-  if (theme.indexOf('purple') != -1) {
+  if (theme.indexOf(ButtonThemes.purple) != -1) {
     classes.push(styles.filled_blueGreenGradient);
   }
-  if (theme.indexOf('white') != -1) {
+  if (theme.indexOf(ButtonThemes.white) != -1) {
     classes.push(styles.outlined);
   }
-  if (theme.indexOf('adaptedForHeader') != -1) {
+  if (theme.indexOf(ButtonThemes.adaptedForHeader) != -1) {
     classes.push(styles.adaptedForHeader);
   }
-  if (theme.indexOf('theme_arrow') != -1) {
+  if (theme.indexOf(ButtonThemes.arrow) != -1) {
     classes.push(styles.theme_arrow);
   }
 

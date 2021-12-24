@@ -1,3 +1,5 @@
+import CheckboxThemes from './CheckboxThemes';
+
 interface CheckboxProps {
   /**
    * id блока.
@@ -43,7 +45,7 @@ interface CheckboxProps {
   /**
    * Темы оформления чекбокса. Некоторые можно групировать друг с другом, а некоторые нельзя.
    */
-  theme?: Array<'type_toggle'>,
+  theme?: Array<CheckboxThemes>,
 }
 
 export default CheckboxProps;

@@ -19,11 +19,11 @@ DefaultInputText.args = {
 export const WithDateMask = Template.bind({});
 WithDateMask.args = {
   label: 'Text field with date mask',
-  inputMask: 'date',
+  inputPattern: 'date',
 };
 
 export const WithEmailMask = Template.bind({});
 WithEmailMask.args = {
   label: 'Text field with email mask',
-  inputMask: 'email',
+  inputPattern: 'email',
 };

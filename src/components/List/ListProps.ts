@@ -1,4 +1,5 @@
 import ListItem from './ListItem';
+import ListThemes from './ListThemes';
 
 interface ListProps {
   /**
@@ -14,7 +15,7 @@ interface ListProps {
   /**
    * Темы оформления списка. Некоторые можно групировать друг с другом, а некоторые нельзя.
    */
-  theme?: Array<'withGrayItems' | 'withBigDots'>,
+  theme?: Array<ListThemes>,
 }
 
 export default ListProps;
