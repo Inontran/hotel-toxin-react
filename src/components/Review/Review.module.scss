@@ -1,0 +1,61 @@
+@import '../../global-styles/variables.scss';
+@import '../../global-styles/functions.scss';
+
+.Review {
+  .AvatarWrapper,
+  .LikeWrapper {
+    flex-shrink: 0;
+    width: calc-rem(48);
+    margin-right: 10px;
+  }
+
+  .AvatarWrapper {
+    display: block;
+    position: relative;
+    height: calc-rem(48);
+    background-color: $white;
+    border: 2px solid $white;
+    box-shadow: 0 10px 20px $dark10;
+    box-sizing: border-box;
+    border-radius: 100vh;
+    overflow: hidden;
+  }
+
+  .Avatar {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: auto;
+    min-width: 100%;
+    height: auto;
+    min-height: 100%;
+  }
+
+  .Header {
+    display: flex;
+    align-items: center;
+    color: $dark75;
+    margin-bottom: 10px;
+  }
+
+  .Username {
+    font-weight: 700;
+    margin: 0;
+  }
+
+  .Content {
+    display: flex;
+  }
+
+  .LikeWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .Text {
+    color: $dark75;
+    margin: 0;
+  }
+}
