@@ -1,0 +1,57 @@
+@import '../../global-styles/variables.scss';
+@import '../../global-styles/functions.scss';
+
+.InputNumber {
+  display: inline-flex;
+  align-items: center;
+
+  .Btn,
+  .Input {
+    width: calc-rem(30);
+    height: calc-rem(30);
+    text-align: center;
+  }
+
+  .Input {
+    font-weight: 700;
+    font-size: calc-rem(12);
+    text-transform: uppercase;
+    line-height: 1.25;
+    padding: 0 3px;
+    border: 0;
+    background: none;
+    -moz-appearance: textfield;
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      display: none;
+    }
+
+    &:read-only {
+      outline: none;
+    }
+  }
+
+  .Btn {
+    position: relative;
+    border-radius: 100vh;
+    border: 1px solid $dark25;
+    background: $white;
+    line-height: calc-rem(30);
+    color: $dark25;
+    cursor: pointer;
+
+    &:disabled {
+      cursor: default;
+      opacity: 0.38;
+    }
+
+    &Text {
+      position: absolute;
+      top: calc(50% - 1px);
+      left: 50%;
+      transform: translate(-50%, -50%);
+      line-height: 1;
+    }
+  }
+}
