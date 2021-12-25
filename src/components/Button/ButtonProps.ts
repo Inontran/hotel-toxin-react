@@ -44,6 +44,11 @@ interface ButtonProps {
    * Темы оформления кнопки. Некоторые можно групировать друг с другом, а некоторые нельзя.
    */
   theme?: Array<ButtonThemes>,
+
+  /**
+   * Optional click handler
+   */
+  onClick?: () => void;
 }
 
 export default ButtonProps;

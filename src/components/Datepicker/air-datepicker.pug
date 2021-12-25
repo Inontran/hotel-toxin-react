@@ -1,0 +1,29 @@
+include ../button/button
+
+//-
+  options.classes - Классы блока.
+  options.id - ИД блока.
+  options.targetDropdown - Селектор родительских dropdown.
+  options.minDate - Минимальная дата, которую можно выбрать. Если указать 'today', то мин. датой будет сегоднешний день.
+
+mixin air-datepicker(options = {})
+  -
+    const {
+      classes = '',
+      id = false,
+      targetDropdown = false,
+      minDate = false,
+    } = options;
+
+  div.air-datepicker.js-air-datepicker(
+    class = classes,
+    id = id ? id : false,
+    data-target-dropdown = targetDropdown ? targetDropdown : false,
+    data-min-date = minDate ? minDate : false,
+  )
+    div.air-datepicker__wrapper.js-air-datepicker__wrapper
+    div.air-datepicker__btns
+      div.air-datepicker__btn.air-datepicker__btn_type_reset.js-air-datepicker__btn_type_reset
+        +button({ text: 'Очистить' })
+      div.air-datepicker__btn.air-datepicker__btn_type_submit.js-air-datepicker__btn_type_submit
+        +button({ text: 'Применить' })

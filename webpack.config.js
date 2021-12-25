@@ -160,6 +160,9 @@ module.exports = {
         version: '1.0',
       },
     }),
+    new webpack.ProvidePlugin({
+      AirDatepicker: 'air-datepicker',
+    }),
   ],
   module: {
     rules: [

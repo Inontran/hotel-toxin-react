@@ -1,0 +1,43 @@
+// @import '../../../node_modules/air-datepicker/air-datepicker.css';
+
+@import '../../global-styles/variables.scss';
+@import '../../global-styles/functions.scss';
+
+.Datepicker {
+  display: inline-block;
+  padding: 20px 19px;
+  background: $white;
+  border: 1px solid $dark25;
+  border-radius: 4px;
+  width: calc-rem(320);
+
+  @media (max-width: $sm) {
+    padding: 10px;
+    width: calc-rem(302);
+  }
+
+  .Btns {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-top: 10px;
+    line-height: 1;
+
+    @media (max-width: $sm) {
+      padding-top: 0;
+    }
+  }
+
+  .Btn {
+    padding-top: 10px;
+
+    &_type_reset {
+      padding-right: 10px;
+    }
+
+    &_type_submit {
+      margin-left: auto;
+    }
+  }
+}

@@ -1,0 +1,190 @@
+@import '../../../node_modules/air-datepicker/air-datepicker.css';
+
+@import '../../global-styles/variables.scss';
+@import '../../global-styles/functions.scss';
+
+.air-datepicker {
+  --adp-cell-border-radius: 100vh;
+  --adp-day-cell-height: 40px;
+  --adp-cell-background-color-in-range: transparent;
+  --adp-cell-background-color-in-range-hover: transparent;
+  --adp-cell-border-color-in-range: transparent;
+  --adp-background-color-in-range: transparent;
+  --adp-background-color-in-range-focused: transparent;
+
+  border: 0;
+  border-radius: 0;
+  width: 100%;
+
+  &-nav {
+    border: 0;
+    align-items: center;
+    padding: 0;
+    margin-bottom: 30px;
+
+    @media (max-width: $sm) {
+      margin-bottom: 10px;
+    }
+  }
+
+  &-nav--action {
+    width: calc-rem(17);
+    height: calc-rem(18);
+    position: relative;
+    margin: 3px;
+
+    &:hover {
+      background: none;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    svg {
+      display: none;
+    }
+
+    &[data-action="prev"]::after,
+    &[data-action="next"]::after {
+      background-image: url(../../shared/img/arrow-forward.svg);
+    }
+
+    &[data-action="prev"]::after {
+      transform: rotate(180deg);
+    }
+  }
+
+  &-nav--title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: calc-rem(19);
+    color: $dark;
+    padding: 0;
+    border-radius: 0;
+    line-height: 1;
+
+    &:hover {
+      background: none;
+    }
+  }
+
+  &--content {
+    padding: 0;
+  }
+
+  &-body--day-names {
+    margin: 0;
+  }
+
+  &-body--day-name {
+    color: $purple;
+    font-size: calc-rem(12);
+    line-height: 1.25;
+    font-weight: 700;
+    text-transform: none;
+    width: calc-rem(40);
+    height: calc-rem(40);
+  }
+
+  &-cell.-day- {
+    font-size: calc-rem(12);
+    line-height: 1.25;
+    color: $dark50;
+    width: calc-rem(40);
+    height: calc-rem(40);
+    position: relative;
+    background: none;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      border-radius: 100vh;
+    }
+
+    &.-other-month- {
+      color: $dark25;
+
+      &.-in-range- {
+        color: $dark50;
+      }
+
+      &.-other-month- {
+        &,
+        &.-focus- {
+          background: transparent;
+        }
+      }
+    }
+
+    &.-range-from-,
+    &.-range-to- {
+      color: $white;
+      font-weight: 700;
+      background: none;
+      border: none;
+
+      &::after {
+        background: $gradient-purple;
+      }
+    }
+
+    &.-range-from-,
+    &.-range-to-,
+    &.-in-range- {
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        background: $gradient-purple;
+        opacity: 0.25;
+        z-index: -1;
+      }
+    }
+
+    &.-range-from- {
+      &::before {
+        border-radius: 100vh 0 0 100vh;
+      }
+    }
+
+    &.-range-to- {
+      &::before {
+        border-radius: 0 100vh 100vh 0;
+      }
+    }
+
+    &.-current- {
+      font-weight: 700;
+
+      &,
+      &.-in-range- {
+        color: $white;
+      }
+
+      &::after {
+        background: $gradient-green;
+      }
+    }
+
+    &.-disabled- {
+      cursor: not-allowed;
+    }
+  }
+}
