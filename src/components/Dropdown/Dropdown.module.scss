@@ -1,0 +1,111 @@
+@import '../../global-styles/variables.scss';
+@import '../../global-styles/functions.scss';
+
+.Dropdown {
+  position: relative;
+
+  .InputWrapper {
+    position: relative;
+    cursor: pointer;
+
+    * {
+      cursor: pointer;
+    }
+  }
+
+  .Arrow {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: calc-rem(44);
+    height: calc-rem(44);
+    background: none;
+    border: 0;
+    box-shadow: none;
+    background-image: url(../../shared/img/arrow-down-gray.svg);
+    background-position: center;
+    background-size: auto;
+    background-repeat: no-repeat;
+    transform: rotate(0);
+    transition: transform .2s;
+  }
+
+  .Btn {
+    background: none;
+    box-shadow: none;
+    border: none;
+    color: $dark50;
+    text-decoration: none;
+    font-weight: 400;
+    cursor: pointer;
+    padding: 0;
+
+    &Arrow {
+      display: inline-block;
+      background-image: url(../../shared/img/arrow-down-gray.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 100% 100%;
+      width: 12px;
+      height: 8px;
+      margin-left: 7px;
+      transform: rotate(0);
+      transition: transform .2s;
+    }
+  }
+
+  .Content {
+    position: absolute;
+    width: 100%;
+    top: calc(100% - 1px);
+    left: 0;
+    z-index: 1000;
+    border: 1px solid $dark50;
+    border-radius: 0 0 4px 4px;
+    background-color: $white;
+    max-height: 0;
+    transition: max-height 0.3s;
+    overflow: hidden;
+    opacity: 0;
+  }
+
+  &.align_right {
+    .Content {
+      left: auto;
+      right: 0;
+    }
+  }
+
+  &.withDates {
+    .Content {
+      top: calc(100% + 5px);
+      border: 0;
+      width: min-content;
+
+      @media (max-width: ($xxs + 10px)) {
+        right: auto;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+  }
+
+  &.aсtivated {
+    .Arrow,
+    .BtnArrow {
+      transform: rotate(180deg);
+    }
+
+    .Content {
+      max-height: 370px;
+      opacity: 1;
+      overflow-y: auto;
+    }
+
+    &.withDates {
+      .Content {
+        max-height: none;
+      }
+    }
+  }
+}

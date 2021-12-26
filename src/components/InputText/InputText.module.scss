@@ -45,5 +45,13 @@
         color: $dark75;
       }
     }
+
+    &.theme_dropdown_activated {
+      .Field {
+        border-color: $dark50;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+    }
   }
 }

@@ -103,5 +103,9 @@ const Heading = ({
   }
 };
 
+export {
+  HeadingProps,
+  HeadingSizes,
+}
 export default Heading;
 

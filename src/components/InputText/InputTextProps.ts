@@ -25,7 +25,7 @@ interface InputTextProps {
   /**
    * Атрибут readonly.
    */
-  readonly?: boolean,
+  readOnly?: boolean,
 
   /**
    * Атрибут disabled.
@@ -51,6 +51,11 @@ interface InputTextProps {
    * Маска ввода.
    */
   inputPattern?: 'date' | 'email' | string,
+
+  /**
+   * Обработчик клика.
+   */
+  onClick?: (event: React.MouseEvent) => void;
 }
 
 export default InputTextProps;

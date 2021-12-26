@@ -15,5 +15,4 @@ const Template: ComponentStory<typeof Datepicker> = (args) => <Datepicker {...ar
 export const DefaultDatepicker = Template.bind({});
 DefaultDatepicker.args = {
   minDate: new Date(),
-  selectedDates: ['2021-12-26', '2021-12-30'],
 };

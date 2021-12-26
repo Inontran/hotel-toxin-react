@@ -1,6 +1,8 @@
 import React from 'react';
 
-import Heading from '../Heading/Heading';
+import Heading, {
+  HeadingSizes,
+} from '../Heading/Heading';
 
 import InputTextProps from './InputTextProps';
 import InputTextThemes from './InputTextThemes';
@@ -17,12 +19,15 @@ class InputText extends React.Component<InputTextProps> {
   }
 
   render() {
-    const classesBlock = [styles.InputText];
+    const blockClasses = [styles.InputText];
     if (this.props.theme?.indexOf(InputTextThemes.subscription) != -1) {
-      classesBlock.push(styles.theme_subscription);
+      blockClasses.push(styles.theme_subscription);
     }
     if (this.props.theme?.indexOf(InputTextThemes.dropdown) != -1) {
-      classesBlock.push(styles.theme_dropdown);
+      blockClasses.push(styles.theme_dropdown);
+    }
+    if (this.props.theme?.indexOf(InputTextThemes.dropdown_activated) != -1) {
+      blockClasses.push(styles.theme_dropdown_activated);
     }
 
     let attrPattern = this.props.inputPattern;
@@ -41,7 +46,7 @@ class InputText extends React.Component<InputTextProps> {
     
     return (
       <label
-        className = { classesBlock.join(' ') }
+        className = { blockClasses.join(' ') }
         id = { this.props.id }
       >
         { 
@@ -49,7 +54,7 @@ class InputText extends React.Component<InputTextProps> {
           <span className = { styles.Label }>
             <Heading
               text = { this.props.label }
-              size = 'small'
+              size = { HeadingSizes.small }
               tag = 'span'
             />
           </span>
@@ -61,12 +66,17 @@ class InputText extends React.Component<InputTextProps> {
           name = { this.props.name }
           value = { this.props.value }
           pattern = { attrPattern }
-          readOnly = { this.props.readonly }
+          readOnly = { this.props.readOnly }
           disabled = { this.props.disabled }
+          {...this.props}
         />
       </label>
     )
   }
 }
 
+export {
+  InputTextProps,
+  InputTextThemes,
+}
 export default InputText;
