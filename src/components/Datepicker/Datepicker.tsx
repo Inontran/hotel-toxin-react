@@ -1,5 +1,7 @@
 import React from 'react';
-import AirDatepicker, { AirDatepickerOptions } from 'air-datepicker';
+import AirDatepicker, {
+  AirDatepickerOptions
+} from 'air-datepicker';
 
 import Button from '../Button/Button';
 
@@ -43,7 +45,10 @@ class Datepicker extends React.Component<DatepickerProps, DatepickerState> {
             </div>
           }
           <div className = { styles.Btn + ' ' + styles.Btn_type_submit }>
-            <Button text = 'Применить'/>
+            <Button
+              text = 'Применить'
+              onClick = { this.onSubmitButtonClick }
+            />
           </div>
         </div>
       </div>
@@ -98,7 +103,20 @@ class Datepicker extends React.Component<DatepickerProps, DatepickerState> {
 
   private onResetButtonClick = () => {
     this.airDatepicker.clear();
+    if (this.props.resetCallback) {
+      this.props.resetCallback();
+    }
+  }
+
+  private onSubmitButtonClick = () => {
+    if (this.props.submitCallback) {
+      this.props.submitCallback(this.airDatepicker.selectedDates);
+    }
   }
 }
 
+export {
+  DatepickerProps,
+  DatepickerState,
+}
 export default Datepicker;

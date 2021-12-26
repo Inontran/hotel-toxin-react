@@ -31,7 +31,7 @@ class Dropdown extends React.Component<DropdownProps, DropdownState> {
 
     if (this.state.isShow) {
       blockClasses.push(styles.aсtivated);
-      
+
       if (this.props.theme?.indexOf(DropdownThemes.withDates) === -1) {
         inputTextModifiers.push(InputTextThemes.dropdown_activated);
       }

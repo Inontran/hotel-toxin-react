@@ -13,6 +13,10 @@ interface AirDatepickerProps {
    * Выбранные даты.
    */
   selectedDates?: Date[] | string[] | number[],
+
+  resetCallback?: () => void,
+
+  submitCallback?: (selectedDates: Date[]) => void,
 }
 
 export default AirDatepickerProps;
