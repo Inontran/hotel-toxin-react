@@ -1,0 +1,119 @@
+@import '../../global-styles/variables.scss';
+@import '../../global-styles/functions.scss';
+
+.Diagram {
+  &Container {
+    display: flex;
+    align-items: flex-end;
+    position: relative;
+    flex-wrap: wrap;
+  }
+
+  .ChartContainer {
+    width: 150px;
+    height: 124px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .Chart {
+    width: 248px;
+    height: 124px;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .Picture {
+    transform: translate(-64px, -1px);
+  }
+
+  .Count {
+    position: absolute;
+    top: 50%;
+    left: 60px;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    text-align: center;
+    color: $purple;
+    margin-top: 0;
+    margin-bottom: 0;
+
+    &Number {
+      display: block;
+      font-family: 'Montserrat', sans-serif;
+      font-size: calc-rem(24);
+      font-weight: 700;
+      line-height: divide(30, 24);
+      max-width: 95px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+    &Text {
+      display: block;
+      font-size: calc-rem(12);
+      font-weight: 700;
+      line-height: divide(15, 12);
+      text-transform: uppercase;
+    }
+
+    &Text,
+    &Number {
+      max-width: 95px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+  }
+
+  .Legend {
+    padding-right: 7px;
+    padding-top: 10px;
+    padding-left: 0;
+    margin: 0;
+
+    &Item {
+      display: flex;
+      align-items: flex-start;
+      line-height: 1.5;
+      margin-bottom: 3px;
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+
+      &Icon {
+        overflow: hidden;
+        width: calc-rem(10);
+        height: calc-rem(10);
+        border-radius: 100vh;
+        margin-right: 5px;
+        margin-top: 4px;
+        flex: none;
+
+        &.theme_yellow {
+          background: $gradient-yellow;
+        }
+
+        &.theme_green {
+          background: $gradient-green;
+        }
+
+        &.theme_purple {
+          background: $gradient-purple;
+        }
+
+        &.theme_gray {
+          background: $gradient-gray;
+        }
+      }
+
+      &Text {
+        font-size: calc-rem(14);
+        color: $dark75;
+      }
+    }
+  }
+}

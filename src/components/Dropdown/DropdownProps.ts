@@ -28,6 +28,9 @@ interface AirDatepickerProps {
    */
   theme?: DropdownThemes[],
 
+  /**
+   * Функция обратного вызова после открытия и закрытия выпадающего списка.
+   */
   toggleCallback?: (isShow: boolean) => void,
 }
 

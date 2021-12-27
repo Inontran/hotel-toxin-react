@@ -1,0 +1,58 @@
+//-
+  options.classes - Классы блока.
+  options.id - ИД блока.
+  options.chartNumAwesome = 0 - Количество голосов.
+  options.chartNumGood = 0 - Количество голосов.
+  options.chartNumNotbad = 0 - Количество голосов.
+  options.chartNumDisappointed = 0 - Количество голосов.
+  options.chartCountAll - Общее количество голосов.
+  options.labelAwesome = 'Великолепно' - Подпись количества голосов (chartNumAwesome).
+  options.labelGood = 'Хорошо' - Подпись количества голосов (chartNumGood).
+  options.labelNotbad = 'Удовлетворительно' - Подпись количества голосов (chartNumNotbad).
+  options.labelDisappointed = 'Разочарован' - Подпись количества голосов (chartNumDisappointed).
+
+mixin diagram(options = {})
+  -
+    const {
+      classes = '',
+      id = false,
+      chartNumAwesome = 0,
+      chartNumGood = 0,
+      chartNumNotbad = 0,
+      chartNumDisappointed = 0,
+      labelAwesome = 'Великолепно',
+      labelGood = 'Хорошо',
+      labelNotbad = 'Удовлетворительно',
+      labelDisappointed = 'Разочарован',
+      chartCountAll = false,
+    } = options;
+
+  div.diagram.js-diagram(
+    class = classes,
+    id = id ? id : false,
+    data-num-1 = chartNumAwesome, 
+    data-num-2 = chartNumGood, 
+    data-num-3 = chartNumNotbad, 
+    data-num-4 = chartNumDisappointed,
+  )
+    div.diagram__container
+      div.diagram__chart-container
+        div.diagram__chart
+          canvas.diagram__picture.js-diagram__picture
+        if chartCountAll
+          p.diagram__count
+            span.diagram__count-number #{chartCountAll}
+            span.diagram__count-text голосов
+      ul.diagram__legend
+        li.diagram__legend-item
+          span.diagram__legend-item-icon.diagram__legend-item-icon_theme_yellow
+          span.diagram__legend-item-text #{labelAwesome}
+        li.diagram__legend-item
+          span.diagram__legend-item-icon.diagram__legend-item-icon_theme_green
+          span.diagram__legend-item-text #{labelGood}
+        li.diagram__legend-item
+          span.diagram__legend-item-icon.diagram__legend-item-icon_theme_purple
+          span.diagram__legend-item-text #{labelNotbad}
+        li.diagram__legend-item
+          span.diagram__legend-item-icon.diagram__legend-item-icon_theme_gray
+          span.diagram__legend-item-text #{labelDisappointed}
