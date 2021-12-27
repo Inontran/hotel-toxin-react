@@ -27,6 +27,8 @@ interface AirDatepickerProps {
    * Некоторые можно групировать друг с другом, а некоторые нельзя.
    */
   theme?: DropdownThemes[],
+
+  toggleCallback?: (isShow: boolean) => void,
 }
 
 export default AirDatepickerProps;

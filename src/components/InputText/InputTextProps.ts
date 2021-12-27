@@ -14,7 +14,7 @@ interface InputTextProps {
   /**
    * Значение поля (атрибут value).
    */
-  value? : string | number,
+  value? : string | number | readonly string[],
 
   /**
    * Тип поля (атрибут type).

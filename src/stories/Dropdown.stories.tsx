@@ -26,4 +26,6 @@ DefaultDropdown.args = {
 
 const Template2: ComponentStory<typeof DropdownDatepicker> = (args) => <DropdownDatepicker {...args} />;
 export const DefaultDropdownDatepicker = Template2.bind({});
-DefaultDropdownDatepicker.args = {};
+DefaultDropdownDatepicker.args = {
+  label: 'Даты пребывания в отеле',
+};

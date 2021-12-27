@@ -77,6 +77,14 @@ class Dropdown extends React.Component<DropdownProps, DropdownState> {
     return isChangedPropState;
   }
 
+  componentDidUpdate(nextProps: DropdownProps, nextState: DropdownState) {
+    if (nextState.isShow !== this.state.isShow) {
+      if (this.props.toggleCallback) {
+        this.props.toggleCallback(this.state.isShow);
+      }
+    }
+  }
+
   private onButtonClick = (event: React.MouseEvent) => {
     event.preventDefault();
     this.setState({
