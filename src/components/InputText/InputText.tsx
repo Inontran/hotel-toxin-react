@@ -68,7 +68,7 @@ class InputText extends React.Component<InputTextProps> {
           pattern = { attrPattern }
           readOnly = { this.props.readOnly }
           disabled = { this.props.disabled }
-          {...this.props}
+          onClick = { this.props.onClick }
         />
       </label>
     )
