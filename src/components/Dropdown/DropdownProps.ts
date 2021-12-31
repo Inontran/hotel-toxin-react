@@ -23,6 +23,11 @@ interface AirDatepickerProps {
   label?: string,
 
   /**
+   * Свойство 'tabIndex'.
+   */
+  tabIndex?: number,
+
+  /**
    * Темы оформления выпадающего списка.
    * Некоторые можно групировать друг с другом, а некоторые нельзя.
    */

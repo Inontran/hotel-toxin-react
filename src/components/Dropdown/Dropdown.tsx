@@ -21,8 +21,6 @@ class Dropdown extends React.Component<DropdownProps, DropdownState> {
     }
 
     this.dropdownRef = React.createRef();
-
-    document.addEventListener('click', this.handlerDocumentClick);
   }
 
   render() {
@@ -33,6 +31,8 @@ class Dropdown extends React.Component<DropdownProps, DropdownState> {
         className = { blockClasses.join(' ') }
         id = { this.props.id }
         ref = { this.dropdownRef }
+        tabIndex = { this.props.tabIndex || 1 }
+        onBlur = { this.handlerDropdownBlur }
       >
         <div className = { styles.InputWrapper }>
           <InputText
@@ -77,10 +77,6 @@ class Dropdown extends React.Component<DropdownProps, DropdownState> {
     }
   }
 
-  componentWillUnmount() {
-    document.removeEventListener('click', this.handlerDocumentClick);
-  }
-
   private handlerButtonClick = (event: React.MouseEvent) => {
     event.preventDefault();
     this.setState({
@@ -88,20 +84,10 @@ class Dropdown extends React.Component<DropdownProps, DropdownState> {
     });
   }
 
-  private handlerDocumentClick = (event: MouseEvent) => {
-    console.log(event);
-    const dropdownDOMElement = this.dropdownRef.current;
-    if (!dropdownDOMElement) {
-      return;
-    }
-    
+  private handlerDropdownBlur = (event: React.FocusEvent) => {
     // условие работает неправильно при выборе даты следующего или предыдущего месяца в календаре.
     // возможно из-за того, что ячейка с датой удаляется из DOM после клика.
-    const clickOnInnerContent = dropdownDOMElement.contains(event.target as HTMLElement);
-    const clickOnDropdown = event.currentTarget === event.target;
-    const hideDropdown = !clickOnInnerContent && !clickOnDropdown && this.state.isShow;
-    
-    if (hideDropdown) {
+    if (!event.currentTarget.contains(event.relatedTarget)) {
       this.setState({
         isShow: false,
       });
