@@ -12,109 +12,6 @@
   .Gallery {
     position: relative;
     width: 100%;
-
-    .owl-carousel {
-      &::after,
-      &::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 42px;
-        height: 100%;
-        z-index: 1;
-        background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);
-
-        @media (min-width: $md) {
-          opacity: 0;
-          transition: opacity 0.2s;
-        }
-      }
-
-      &::before {
-        left: auto;
-        right: 0;
-        transform: rotate(180deg);
-      }
-
-      .owl-nav {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        left: 0;
-        z-index: 2;
-        width: 100%;
-
-        @media (min-width: $md) {
-          opacity: 0;
-          transition: opacity 0.2s;
-        }
-
-        .owl-prev,
-        .owl-next {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          position: absolute;
-          top: 50%;
-          transform: translateY(-50%);
-          width: calc-rem(44);
-          height: calc-rem(44);
-
-          span {
-            width: calc-rem(8);
-            height: calc-rem(13);
-            background-image: url(../../shared/img/arrow-right-white.svg);
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            color: transparent;
-          }
-        }
-
-        .owl-prev {
-          left: 0;
-
-          span {
-            transform: rotate(180deg);
-          }
-        }
-
-        .owl-next {
-          right: 0;
-        }
-      }
-
-      .owl-dots {
-        position: absolute;
-        right: 13px;
-        bottom: 14px;
-        z-index: 1;
-        display: flex;
-
-        .owl-dot {
-          width: calc-rem(8);
-          height: calc-rem(8);
-          border: 1px solid $white;
-          box-shadow: 0 5px 5px $dark30;
-          transition: 0.3s;
-          margin-left: 4px;
-          border-radius: 100vh;
-
-          &.active {
-            background-color: $white;
-          }
-        }
-      }
-    }
-
-    &:hover {
-      .owl-carousel::after,
-      .owl-carousel::before,
-      .owl-nav {
-        opacity: 1;
-      }
-    }
   }
 
   .ImgWrapper {
@@ -125,6 +22,8 @@
   }
 
   .Img {
+    display: block;
+    width: 100%;
     position: absolute;
     top: 50%;
     left: 50%;

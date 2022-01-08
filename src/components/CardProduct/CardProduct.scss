@@ -1,0 +1,103 @@
+@import '../../global-styles/variables.scss';
+@import '../../global-styles/functions.scss';
+
+.CardProduct {
+  .swiper {
+    &::after,
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 42px;
+      height: 100%;
+      z-index: 2;
+      background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);
+    }
+
+    &::before {
+      left: auto;
+      right: 0;
+      transform: rotate(180deg);
+    }
+
+    &::after,
+    &::before,
+    &-button-next,
+    &-button-prev {
+      @media (min-width: $md) {
+        opacity: 0;
+        transition: opacity 0.2s;
+      }
+    }
+
+    &-button-next,
+    &-button-prev {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: calc-rem(44);
+      height: calc-rem(44);
+
+      &::after {
+        content: '';
+        width: calc-rem(8);
+        height: calc-rem(13);
+        background-image: url(../../shared/img/arrow-right-white.svg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        color: transparent;
+      }
+    }
+
+    &-button-prev {
+      &::after {
+        transform: rotate(180deg);
+      }
+    }
+
+    .swiper-pagination.swiper-pagination-bullets {
+      display: inline-flex;
+      position: absolute;
+      right: 13px;
+      left: auto;
+      bottom: 14px;
+      z-index: 2;
+      width: min-content;
+      max-width: 100%;
+
+      .swiper-pagination-bullet {
+        width: calc-rem(8);
+        height: calc-rem(8);
+        border: 1px solid $white;
+        box-shadow: 0 5px 5px $dark30;
+        transition: 0.3s;
+        margin-left: 4px;
+        border-radius: 100vh;
+        background: none;
+        opacity: 1;
+
+        &-active {
+          background-color: $white;
+        }
+      }
+    }
+
+    &:hover {
+      &::after,
+      &::before,
+      .swiper-button-next,
+      .swiper-button-prev {
+        opacity: 1;
+      }
+
+      .swiper-button-next,
+      .swiper-button-prev {
+        &.swiper-button-disabled {
+          opacity: .35;
+        }
+      }
+    }
+  }
+}
