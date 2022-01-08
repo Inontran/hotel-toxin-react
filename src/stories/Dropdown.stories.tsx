@@ -4,6 +4,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import '../global-styles/global.scss';
 import Dropdown from '../components/Dropdown/Dropdown';
 import DropdownDatepicker from '../components/Dropdown/DropdownDatepicker';
+import DoubleDropdownDatepicker from '../components/Dropdown/DoubleDropdownDatepicker';
 
 export default {
   title: 'Example/Components/Dropdown',
@@ -27,5 +28,11 @@ DefaultDropdown.args = {
 const Template2: ComponentStory<typeof DropdownDatepicker> = (args) => <DropdownDatepicker {...args} />;
 export const DefaultDropdownDatepicker = Template2.bind({});
 DefaultDropdownDatepicker.args = {
+  label: 'Даты пребывания в отеле',
+};
+
+const Template3: ComponentStory<typeof DoubleDropdownDatepicker> = (args) => <DoubleDropdownDatepicker {...args} />;
+export const DoubleDropdown = Template3.bind({});
+DoubleDropdown.args = {
   label: 'Даты пребывания в отеле',
 };

@@ -48,11 +48,14 @@ class Dropdown extends React.Component<DropdownProps, DropdownState> {
             onClick = { this.handlerButtonClick }
           ></button>
         </div>
-        <div className = { styles.Content }>
-          <div className = { styles.ContentWrapper }>
-            { this.props.children }
+        {
+          this.props.children &&
+          <div className = { styles.Content }>
+            <div className = { styles.ContentWrapper }>
+              { this.props.children }
+            </div>
           </div>
-        </div>
+        }
       </div>
     )
   }
