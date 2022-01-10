@@ -1,0 +1,68 @@
+@import '../../global-styles/variables.scss';
+@import '../../global-styles/functions.scss';
+
+.RangeSlider {
+  $size: calc-rem(16);
+  $border-width: 2px;
+
+  .LabelWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-bottom: 20px;
+  }
+
+  .Label {
+    display: block;
+    line-height: 1.7;
+  }
+
+  .FormattedRangePrice {
+    text-align: right;
+    border: 0;
+    box-shadow: none;
+    color: $dark50;
+    font-size: calc-rem(12);
+    text-transform: uppercase;
+    width: 45%;
+    outline: none;
+  }
+
+  .Slider {
+    background: $white;
+    border: 1px solid $dark25;
+    border-radius: 100vh;
+    height: calc-rem(6);
+    position: relative;
+
+    &,
+    .Track,
+    .Handle {
+      cursor: pointer;
+    }
+
+    .Handle {
+      top: 50%;
+      transform: translateY(-50%);
+      width: $size;
+      height: $size;
+      border: $border-width solid $white;
+      border-radius: 100vh;
+      background: $gradient-green;
+    }
+
+    .Track.Track_1 {
+      top: -1px;
+      height: calc(100% + 2px);
+      background: $gradient-green;
+    }
+  }
+
+  .Text {
+    color: $dark50;
+    font-size: calc-rem(12);
+    margin-top: 10px;
+    margin-bottom: 0;
+  }
+}
