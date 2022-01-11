@@ -1,0 +1,80 @@
+@import '../../global-styles/variables.scss';
+@import '../../global-styles/functions.scss';
+
+.Pagination {
+  .Wrapper {
+    display: flex;
+    align-items: center;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+  }
+
+  .ForwardBtn,
+  .BackBtn {
+    display: inline-block;
+    border-radius: 100vh;
+    position: relative;
+    background: $gradient-green;
+    text-indent: 100px;
+    overflow: hidden;
+    width: calc-rem(40);
+    height: calc-rem(40);
+    cursor: pointer;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+      background-image: url(../../shared/img/arrow-forward-white.svg);
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      width: 18px;
+      height: 18px;
+    }
+  }
+
+  .BackBtn {
+    &::after {
+      transform: translate(-50%, -50%) rotate(180deg);
+    }
+  }
+
+  .Number {
+    display: inline-block;
+    min-width: calc-rem(40);
+    height: calc-rem(40);
+    text-decoration: none;
+    text-align: center;
+    line-height: calc(#{calc-rem(40)} - 10px);
+    font-size: calc-rem(12);
+    color: $dark50;
+    padding: 5px;
+    background: transparent;
+    transition: 0.2s;
+    cursor: pointer;
+  }
+
+  .BtnWrapper {
+    list-style: none;
+    display: inline-flex;
+
+    &_disabled {
+      display: none;
+    }
+
+    &_current{
+      .Number {
+        border-radius: 100vh;
+        background: $gradient-purple;
+        color: $white;
+        font-weight: 700;
+        cursor: default;
+      }
+    }
+  }
+}
