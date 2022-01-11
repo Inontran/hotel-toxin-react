@@ -1,0 +1,185 @@
+@import '../../global-styles/functions.scss';
+
+.Header {
+  box-shadow: 0 10px 20px $dark5;
+  z-index: 3;
+  background-color: $white;
+
+  .Container {
+    position: relative;
+    display: grid;
+    grid-template-areas: 'logo nav-menu btns';
+    align-items: center;
+    grid-template-columns: auto 1fr auto auto auto;
+    padding: 15px $padding-container;
+    max-width: $max-width-container;
+    margin: 0 auto;
+    background-color: $white;
+  }
+
+  .Logo {
+    grid-area: logo;
+    display: flex;
+  }
+
+  .MainMenu {
+    grid-area: nav-menu;
+    list-style: none;
+    margin-left: auto;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+
+    @media (max-width: $sm) {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      grid-area: unset;
+      background-color: $white;
+      z-index: -3;
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+
+    &Link {
+      color: $dark50;
+      text-decoration: none;
+      font-weight: 400;
+      display: flex;
+      align-items: center;
+
+      @media (max-width: $sm) {
+        text-align: center;
+        justify-content: center;
+        padding: 10px;
+      }
+    }
+
+    &Item {
+      display: inline-block;
+      padding: 0 9px;
+
+      @media (max-width: $sm) {
+        display: block;
+        border-top: 1px solid $dark25;
+
+        &:last-of-type {
+          border-bottom: 1px solid $dark50;
+        }
+      }
+    }
+  }
+
+  &.shownMainMenu {
+    
+    .MainMenu {
+      @media (max-width: $sm) {
+        transform: translateY(0);
+        transition: transform .3s, opacity .3s;
+        box-shadow: 0 8px 10px 0 $dark25;
+        opacity: 1;
+      }
+    }
+  }
+
+  .AuthBtns {
+    grid-area: btns;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    column-gap: 20px;
+    justify-content: center;
+    padding-left: 18px;
+
+    @media (max-width: $lg) {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      grid-area: unset;
+      background-color: $white;
+      z-index: -3;
+      transform: translateY(-100%);
+      display: flex;
+      flex-direction: column;
+      padding: 0;
+      margin: 0;
+      opacity: 0;
+    }
+  }
+
+  &.shownAuthBtns {
+    .AuthBtns {
+      @media (max-width: $lg) {
+        transform: translateY(0);
+        transition: transform .3s, opacity .3s;
+        box-shadow: 0 8px 10px 0 $dark25;
+        opacity: 1;
+      }
+    }
+  }
+
+  .AuthBtn {
+    max-width: 250px;
+
+    @media (max-width: $lg) {
+      max-width: none;
+      border-top: 1px solid $dark25;
+
+      &:last-of-type {
+        border-bottom: 1px solid $dark50;
+      }
+    }
+  }
+
+  .Username {
+    color: $dark50;
+    padding-left: 30px;
+    margin-left: 15px;
+    position: relative;
+    max-width: 250px;
+    text-decoration: none;
+
+    @media (max-width: $lg) {
+      display: none;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      height: 30px;
+      width: 1px;
+      background-color: $dark10;
+    }
+  }
+
+  .IconBtn {
+    background: none;
+    border: 0;
+    box-shadow: none;
+    width: auto;
+    height: auto;
+    display: inline-flex;
+    cursor: pointer;
+    margin-left: 20px;
+
+    &.type_profile {
+      @media (min-width: $lg) {
+        display: none;
+      }
+
+      @media (max-width: $sm) {
+        margin-left: auto;
+      }
+    }
+
+    &.type_menu {
+      @media (min-width: $sm) {
+        display: none;
+      }
+    }
+  }
+}
