@@ -78,4 +78,10 @@ const Button = ({
 
 };
 
+export {
+  ButtonProps,
+  ButtonSizes,
+  ButtonThemes,
+  ButtonWidth,
+}
 export default Button;

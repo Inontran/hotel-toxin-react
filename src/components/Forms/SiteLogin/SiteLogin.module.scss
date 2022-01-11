@@ -1,0 +1,43 @@
+@import '../../../global-styles/variables.scss';
+
+.SiteLogin {
+  background-color: $white;
+  border: 1px solid rgba($black, 0.12);
+  box-shadow: 0 0 25px rgba($black, 0.2);
+  border-radius: 4px;
+  padding: 40px 29px 30px;
+
+  @media (max-width: 400px) {
+    padding: 20px 9px 20px;
+  }
+
+  .TitleWrapper {
+    margin-bottom: 20px;
+  }
+
+  .InputEmail {
+    margin-bottom: 10px;
+  }
+
+  .TitleWrapper,
+  .InputPassword,
+  .BtnLogin {
+    margin-bottom: 20px;
+  }
+
+  .Footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    &Text,
+    &Button {
+      padding-top: 10px;
+    }
+
+    &Text {
+      padding-right: 10px;
+    }
+  }
+}
