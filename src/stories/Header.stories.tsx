@@ -4,7 +4,6 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import '../global-styles/global.scss';
 import Header, {
   HeaderProps,
-  HeaderMenuItem,
 } from '../components/Header/Header';
 
 export default {

@@ -1,0 +1,139 @@
+@import '../../global-styles/variables.scss';
+
+.Footer {
+  background: $white;
+
+  &.bordered_top {
+    border-top: 1px solid $dark25;
+  }
+
+  .MainContent,
+  .CopyrightWrapper {
+    max-width: $max-width-container;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .MainContent {
+    display: grid;
+    grid-template-areas: 'logo col2 col3 col4 subscription';
+    grid-template-columns: 3fr 2fr 2fr 2fr 3fr;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    column-gap: 40px;
+
+    @media (max-width: ($md + 1)) {
+      grid-template-areas: 'logo';
+      grid-template-columns: 1fr;
+      padding-top: 110px;
+      padding-bottom: 0;
+    }
+  }
+
+  .Logo {
+    grid-area: logo;
+
+    @media (max-width: ($md + 1)) {
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  .Subscription {
+    grid-area: subscription;
+  }
+
+  @media (max-width: ($md + 1)) {
+    .NavItemsMenu,
+    .AboutItemsMenu,
+    .SupportItemsMenu,
+    .Subscription {
+      display: none;
+    }
+  }
+
+  .LogoWrapper {
+    display: flex;
+    margin-bottom: 20px;
+
+    @media (max-width: ($md + 1)) {
+      justify-content: center;
+      margin-bottom: 18px;
+    }
+  }
+
+  .TitleWrapper {
+    margin-top: 4px;
+    margin-bottom: 23px;
+  }
+
+  .List {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    &Link {
+      display: inline-block;
+      text-decoration: none;
+      color: $dark50;
+      margin-bottom: 21px;
+      line-height: 1.21;
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .Copyright {
+    border-top: 1px solid $dark25;
+    padding-top: 23px;
+    padding-bottom: 23px;
+
+    @media (max-width: ($md + 1)) {
+      border: 0;
+      padding-top: 0;
+      padding-bottom: 110px;
+    }
+  }
+
+  .CopyrightWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @media (max-width: ($md + 1)) {
+      justify-content: center;
+    }
+  }
+
+  .Text,
+  .SubscriptionText,
+  .CopyrightText {
+    color: $dark75;
+  }
+
+  .Text,
+  .SubscriptionText {
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+
+  .Text {
+    @media (max-width: ($md + 1)) {
+      text-align: center;
+      margin-bottom: 28px;
+    }
+  }
+
+  .CopyrightText {
+    margin: 0;
+
+    @media (max-width: ($md + 1)) {
+      display: none;
+    }
+  }
+}
