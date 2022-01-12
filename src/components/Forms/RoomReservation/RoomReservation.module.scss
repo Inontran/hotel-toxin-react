@@ -1,0 +1,143 @@
+@import '../../../global-styles/variables.scss';
+@import '../../../global-styles/functions.scss';
+
+.RoomReservation {
+  background-color: $white;
+  border: 1px solid rgba($black, 0.12);
+  box-shadow: 0 0 25px rgba($black, 0.2);
+  border-radius: 4px;
+  padding: 40px 29px 30px;
+
+  @media (max-width: 400px) {
+    padding: 20px 9px 20px;
+  }
+
+  .RoomInfo {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    margin-top: 2px;
+  }
+
+  .RoomName,
+  .RoomPrice {
+    padding-bottom: 10px;
+  }
+
+  .RoomName {
+    font-weight: 700;
+    padding-right: 10px;
+  }
+
+  .Symbol {
+    font-size: calc-rem(14);
+    line-height: 1.21;
+    padding-right: 8px;
+  }
+
+  .RoomNumber {
+    font-size: calc-rem(24);
+    line-height: 1.21;
+  }
+
+  .RoomType {
+    font-size: calc-rem(12);
+    line-height: 1.25;
+    color: $purple;
+    text-transform: uppercase;
+    padding-left: 8px;
+  }
+
+  .RoomPrice {
+    color: $dark50;
+  }
+
+  .RoomNumberPrice {
+    font-weight: 700;
+    font-size: calc-rem(14);
+  }
+
+  .RoomPaymentPeriod {
+    font-size: calc-rem(12);
+  }
+
+  .DatesContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    justify-content: space-between;
+    column-gap: 20px;
+  }
+
+  .InputDatesWrapper {
+    min-width: 150px;
+  }
+
+  .Table {
+    color: $dark75;
+    width: 100%;
+
+    &Cell {
+      padding-bottom: 10px;
+      vertical-align: top;
+      line-height: 1.2857;
+
+      &.withTooltip {
+        position: relative;
+        padding-right: 24px;
+      }
+
+      &.withPrice {
+        text-align: right;
+        min-width: 74px;
+      }
+    }
+  }
+
+  .Tooltip {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: inline-block;
+    overflow: hidden;
+    border-radius: 100vh;
+    border: 1px solid $dark25;
+    width: calc-rem(20);
+    height: calc-rem(20);
+    text-align: center;
+    line-height: calc-rem(20);
+    cursor: pointer;
+
+    &::after {
+      content: 'i';
+      font-size: calc-rem(12);
+      font-weight: 700;
+      color: $dark25;
+    }
+  }
+
+  .TotalPriceWrapper {
+    display: flex;
+    align-items: flex-end;
+    font-weight: 700;
+    font-size: calc-rem(19);
+    line-height: 1;
+  }
+
+  .Points {
+    flex-grow: 1;
+    border-bottom: 1px dashed $dark25;
+    margin: 0 5px 4px;
+  }
+
+  .TotalPrice {
+    white-space: nowrap;
+  }
+
+  .InputDatesWrapper,
+  .TotalPriceWrapper,
+  .TableWrapper,
+  .InputWrapper {
+    margin-bottom: 20px;
+  }
+}

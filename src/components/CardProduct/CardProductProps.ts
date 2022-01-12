@@ -17,7 +17,7 @@ interface CardProductProps {
   /**
    * Стоимость апартаментов.
    */
-  price: string,
+  roomPrice: number,
 
   /**
    * За какой период указана стоимость, например, "в сутки" или "в неделю".

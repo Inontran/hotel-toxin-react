@@ -17,6 +17,7 @@ import 'swiper/scss/navigation';
 import 'swiper/scss/mousewheel';
 import 'swiper/scss/keyboard';
 
+import { formatPrice } from '../../shared/functions';
 import RateBtn from '../RateBtn/RateBtn';
 
 import CardProductProps from './CardProductProps';
@@ -33,7 +34,7 @@ class CardProduct extends Component<CardProductProps> {
       id = undefined,
       roomNumber = this.props.roomNumber,
       roomType = undefined,
-      price = this.props.price,
+      roomPrice = this.props.roomPrice,
       priceTime = 'в сутки',
       countReviews = 0,
       rating = 0,
@@ -86,7 +87,7 @@ class CardProduct extends Component<CardProductProps> {
               }
             </div>
             <div className = { styles.RoomPrice }>
-              <span className = { styles.RoomNumberPrice }>{price}</span>
+              <span className = { styles.RoomNumberPrice }>{formatPrice(roomPrice)}</span>
               <span className = { styles.RoomPaymentPeriod }> {priceTime}</span>
             </div>
           </div>

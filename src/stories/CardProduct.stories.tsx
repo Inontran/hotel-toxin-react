@@ -1,7 +1,6 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { RUBLE_SIGN } from '../shared/constants';
 import '../global-styles/global.scss';
 import CardProduct, {
   CardProductProps,
@@ -21,7 +20,7 @@ const Template: ComponentStory<typeof CardProduct> = (args) => {
 
 export const DefaultCardProduct = Template.bind({});
 const DefaultCardProductArgs: CardProductProps = {
-  price: '9 990' + RUBLE_SIGN,
+  roomPrice: 9990,
   roomNumber: '888',
   roomType: 'люкс',
   countReviews: 145,
@@ -31,7 +30,7 @@ DefaultCardProduct.args = DefaultCardProductArgs;
 
 export const CardProductWithGallery = Template.bind({});
 const CardProductWithGalleryArgs: CardProductProps = {
-  price: '9 990' + RUBLE_SIGN,
+  roomPrice: 9990,
   roomNumber: '888',
   roomType: 'люкс',
   countReviews: 145,
