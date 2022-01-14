@@ -7,7 +7,6 @@ import ReviewProps from './ReviewProps';
 import styles from './Review.module.scss';
 
 const Review = ({
-  id,
   avatar = noPhoto,
   likeBtnProps,
   username,
@@ -18,7 +17,6 @@ const Review = ({
   return (
     <article
       className = { styles.Review }
-      id = { id }
     >
       <header
         className = { styles.Header }

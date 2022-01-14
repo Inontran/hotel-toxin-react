@@ -2,14 +2,8 @@ import LikeBtnProps from '../LikeBtn/LikeBtnProps';
 
 interface ReviewProps {
   /**
-   * Id блока.
-   */
-  id?: string,
-
-  /**
    * Фотография человека, оставивший отзыв.
    */
-  // avatar = require('@/shared/img/user-avatar-example.jpg').default,
   avatar?: string,
 
   /**

@@ -7,15 +7,15 @@
   padding: 0;
   margin: 0;
 
-  & .Item {
+  .Item {
     list-style: none;
   }
 
-  & .Link {
+  .Link {
     display: flex;
   }
 
-  & .Icon {
+  .Icon {
     flex: none;
   }
 }

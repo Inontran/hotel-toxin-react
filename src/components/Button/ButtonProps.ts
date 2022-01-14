@@ -4,11 +4,6 @@ import ButtonWidth from './ButtonWidth';
 
 interface ButtonProps {
   /**
-   * id блока.
-   */
-  id?: string,
-
-  /**
    * Ссылка кнопки. Если есть эта опция, то тег будет "а", иначе "button".
    */
   href?: string,

@@ -1,10 +1,5 @@
 interface RadioProps {
   /**
-   * id блока.
-   */
-  id?: string,
-
-  /**
    * Tabindex радио-кнопки.
    */
   tabIndex?: number,

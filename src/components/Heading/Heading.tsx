@@ -5,10 +5,9 @@ import HeadingSizes from './HeadingSizes';
 import styles from './Heading.module.scss';
 
 const Heading = ({
-  id = undefined,
-  text = undefined,
+  text,
   tag = 'p',
-  size = undefined,
+  size,
   ...props
 }: HeadingProps) => {
   const classes = [styles.Heading];
@@ -33,7 +32,6 @@ const Heading = ({
       return (
         <h1
           className = { classes.join(' ') }
-          id = { id || undefined }
           { ...props }
         >{text}</h1>
       );
@@ -42,7 +40,6 @@ const Heading = ({
       return (
         <h2
           className = { classes.join(' ') }
-          id = { id || undefined }
           { ...props }
         >{text}</h2>
       );
@@ -51,7 +48,6 @@ const Heading = ({
       return (
         <h3
           className = { classes.join(' ') }
-          id = { id || undefined }
           { ...props }
         >{text}</h3>
       );
@@ -60,7 +56,6 @@ const Heading = ({
       return (
         <h4
           className = { classes.join(' ') }
-          id = { id || undefined }
           { ...props }
         >{text}</h4>
       );
@@ -69,7 +64,6 @@ const Heading = ({
       return (
         <h5
           className = { classes.join(' ') }
-          id = { id || undefined }
           { ...props }
         >{text}</h5>
       );
@@ -78,7 +72,6 @@ const Heading = ({
       return (
         <h6
           className = { classes.join(' ') }
-          id = { id || undefined }
           { ...props }
         >{text}</h6>
       );
@@ -87,7 +80,6 @@ const Heading = ({
       return (
         <span
           className = { classes.join(' ') }
-          id = { id || undefined }
           { ...props }
         >{text}</span>
       );
@@ -96,7 +88,6 @@ const Heading = ({
       return (
         <p
           className = { classes.join(' ') }
-          id = { id || undefined }
           { ...props }
         >{text}</p>
       );

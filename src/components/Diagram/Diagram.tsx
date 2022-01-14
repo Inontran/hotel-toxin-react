@@ -30,7 +30,6 @@ class Diagram extends React.Component<DiagramProps>{
   
   render() {
     const {
-      id = this.props.id || undefined,
       chartNumAwesome = this.props.chartNumAwesome || Diagram.defaultProps.chartNumAwesome,
       chartNumGood = this.props.chartNumAwesome || Diagram.defaultProps.chartNumAwesome,
       chartNumNotbad = this.props.chartNumAwesome || Diagram.defaultProps.chartNumNotbad,
@@ -47,7 +46,6 @@ class Diagram extends React.Component<DiagramProps>{
     return (
       <div
         className = { styles.Diagram }
-        id = { id }
       >
         <div className = { styles.DiagramContainer }>
           <div className = { styles.ChartContainer}>

@@ -1,6 +1,9 @@
 import HeaderMenuItem from './HeaderMenuItem';
 
 interface HeaderProps {
+  /**
+   * Имя авторизованного пользователя.
+   */
   username?: string,
 
   /**

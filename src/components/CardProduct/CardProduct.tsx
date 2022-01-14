@@ -27,9 +27,8 @@ import './CardProduct.scss';
 class CardProduct extends Component<CardProductProps> {
   render() {
     const {
-      id = undefined,
       roomNumber = this.props.roomNumber,
-      roomType = undefined,
+      roomType,
       roomPrice = this.props.roomPrice,
       priceTime = 'в сутки',
       countReviews = 0,
@@ -40,7 +39,6 @@ class CardProduct extends Component<CardProductProps> {
     return (
       <article
         className = { styles.CardProduct + ' CardProduct' }
-        id = { id }
       >
         {
           gallery.length > 0 &&

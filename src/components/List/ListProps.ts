@@ -3,11 +3,6 @@ import ListThemes from './ListThemes';
 
 interface ListProps {
   /**
-   * id блока.
-   */
-  id?: string,
-
-  /**
    * Массив пуктов списка.
    */
   items?: Array<ListItem>,

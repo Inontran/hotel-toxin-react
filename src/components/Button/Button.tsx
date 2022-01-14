@@ -7,13 +7,12 @@ import ButtonWidth from './ButtonWidth';
 import styles from './Button.module.scss';
 
 const Button = ({
-  id = undefined,
-  href = undefined,
-  tabIndex = undefined,
+  href,
+  tabIndex,
   type = 'button',
   text = 'Click me',
-  size = undefined,
-  width = undefined,
+  size,
+  width,
   theme = [],
   ...props
 }: ButtonProps) => {
@@ -49,10 +48,9 @@ const Button = ({
   if (href) {
     return (
       <a
-        id = { id || undefined }
         className = { classes.join(' ') }
-        tabIndex = { tabIndex || undefined }
-        href = { href || undefined }
+        tabIndex = { tabIndex }
+        href = { href }
         {...props}
       >
         {
@@ -63,10 +61,9 @@ const Button = ({
   } else {
     return (
       <button
-        id = { id || undefined }
         className = { classes.join(' ') }
-        tabIndex = { tabIndex || undefined }
-        type = { type || undefined }
+        tabIndex = { tabIndex }
+        type = { type }
         {...props}
       >
         {

@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactSlider from 'react-slider';
 
-import { RUBLE_SIGN } from '../../shared/constants';
+import { formatPrice } from '../../shared/functions';
 import Heading, {
   HeadingSizes,
 } from '../Heading/Heading';
@@ -23,18 +23,16 @@ class RangeSlider extends React.Component<RangeSliderProps, RangeSliderState> {
 
   render() {
     const {
-      id = undefined,
-      label = undefined,
+      label,
       min = 0,
       max = 100,
       step = 1,
-      textBottom = undefined,
+      textBottom,
     } = this.props;
 
     return (
       <div
         className = { styles.RangeSlider }
-        id = { id }
       >
         <div className = { styles.LabelWrapper }>
           {
@@ -48,7 +46,7 @@ class RangeSlider extends React.Component<RangeSliderProps, RangeSliderState> {
             </div>
           }
           <div className = { styles.FormattedRangePrice }>
-            { this.state.startVal + RUBLE_SIGN + ' - ' + this.state.endVal + RUBLE_SIGN }
+            { formatPrice(this.state.startVal) + ' - ' + formatPrice(this.state.endVal) }
           </div>
         </div>
 

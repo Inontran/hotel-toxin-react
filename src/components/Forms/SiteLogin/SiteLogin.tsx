@@ -15,7 +15,7 @@ import styles from './SiteLogin.module.scss';
 class SiteLogin extends React.PureComponent<SiteLoginProps> {
   render() {
     const {
-      buttonRegHref = undefined,
+      buttonRegHref,
     } = this.props;
 
     return (

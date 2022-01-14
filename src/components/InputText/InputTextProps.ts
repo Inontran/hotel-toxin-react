@@ -2,11 +2,6 @@ import InputTextThemes from './InputTextThemes';
 
 interface InputTextProps {
   /**
-   * id блока.
-   */
-  id?: string,
-
-  /**
    * Текст внутри поля, пока в нем отсутствует значение (атрибут placeholder).
    */
   placeholder?: string,

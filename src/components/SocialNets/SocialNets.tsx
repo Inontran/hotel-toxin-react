@@ -4,22 +4,20 @@ import SocialNetsProps from './SocialNetsProps';
 import styles from './SocialNets.module.scss';
 
 const SocialNets = ({
-  id = undefined,
   items = [],
   ...props
 }: SocialNetsProps) => {
   return (
     <ul
       className = { styles.SocialNets }
-      id = { id || undefined }
       { ...props }
     >
       {
-        items.map((item, index) => {
+        items.map((item) => {
           return (
             <li
               className = { styles.Item }
-              key = { index }
+              key = { Math.random() * 1000 }
             >
               <a
                 className = { styles.Link }
@@ -30,8 +28,8 @@ const SocialNets = ({
                 <img 
                   className = { styles.Icon }
                   src = { item.src }
-                  alt = { item.alt || item.title || undefined }
-                  title = { item.title || item.alt || undefined }
+                  alt = { item.alt || item.title }
+                  title = { item.title || item.alt }
                 />
               </a>
             </li>

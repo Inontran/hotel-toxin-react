@@ -4,30 +4,26 @@ import RadioProps from './RadioProps';
 import styles from './Radio.module.scss';
 
 const Radio = ({
-  id = undefined,
-  tabIndex = undefined,
+  tabIndex,
   inputType = 'radio',
-  text = undefined,
-  name = undefined,
-  value = undefined,
-  checked = undefined,
+  text,
+  name,
+  value,
+  checked,
   ...props
 }: RadioProps) => {
-  const classes = [styles.Radio];
-
   return (
     <div
-      className = { classes.join(' ') }
-      id = { id || undefined }
+      className = { styles.Radio }
       { ...props }
     >
       <label className = { styles.Wrapper }>
         <input className = { styles.Input }
-          type = { inputType || undefined }
-          tabIndex = { tabIndex || undefined }
-          name = { name || undefined }
-          value = { value || undefined }
-          checked = { checked || undefined }
+          type = { inputType }
+          tabIndex = { tabIndex }
+          name = { name }
+          value = { value }
+          checked = { checked }
         />
         <span className = { styles.CustomInput }></span>
         {

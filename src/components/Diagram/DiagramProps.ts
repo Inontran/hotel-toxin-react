@@ -1,10 +1,5 @@
 interface DiagramProps {
   /**
-   * id блока.
-   */
-  id?: string,
-
-  /**
    * Количество голосов.
    * @default 0
    */

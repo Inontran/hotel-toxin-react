@@ -23,11 +23,11 @@ class Header extends React.PureComponent<HeaderProps, HeaderState> {
 
   render() {
     const {
-      username = undefined, 
+      username,
       buttonLoginText = 'Login',
-      buttonLoginHref = undefined,
+      buttonLoginHref,
       buttonRegText = 'Registration',
-      buttonRegHref = undefined,
+      buttonRegHref,
       menuItems = [],
     } = this.props;
 

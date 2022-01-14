@@ -12,7 +12,6 @@ import styles from './Datepicker.module.scss';
 
 class Datepicker extends React.Component<DatepickerProps, DatepickerState> {
   private airDatepickerWrapperRef: React.RefObject<HTMLDivElement>;
-
   private airDatepicker!: AirDatepicker;
 
   constructor(props: DatepickerProps) {
@@ -70,8 +69,8 @@ class Datepicker extends React.Component<DatepickerProps, DatepickerState> {
         navTitles: {
           days: 'MMMM yyyy',
         },
-        minDate: minDate || undefined,
-        selectedDates: selectedDates || undefined,
+        minDate: minDate,
+        selectedDates: selectedDates,
         onSelect: ({datepicker}) => {
           this.setState({
             isResetBtnVisible: datepicker.selectedDates.length ? true : false,

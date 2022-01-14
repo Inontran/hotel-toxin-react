@@ -17,10 +17,17 @@ class InputNumber extends React.Component<InputNumberProps, InputNumberState>{
   }
 
   render() {
+    const {
+      name,
+      max,
+      min,
+      step = InputNumber.defaultProps.step,
+      readonly,
+    } = this.props;
+
     return (
       <div
         className = { styles.InputNumber }
-        id = { this.props.id }
       >
         <button
           className = { styles.Btn }
@@ -34,11 +41,11 @@ class InputNumber extends React.Component<InputNumberProps, InputNumberState>{
         <input
           className = { styles.Input }
           type = 'number'
-          name = { this.props.name }
-          max = { this.props.max }
-          min = { this.props.min }
-          step = { this.props.step }
-          readOnly = { this.props.readonly }
+          name = { name }
+          max = { max }
+          min = { min }
+          step = { step }
+          readOnly = { readonly }
           value = { this.state.value }
         />
         <button
@@ -55,9 +62,15 @@ class InputNumber extends React.Component<InputNumberProps, InputNumberState>{
   }
 
   shouldComponentUpdate(nextProps: InputNumberProps, nextState: InputNumberState): boolean {
-    const isChangedMin = nextProps.min !== this.props.min;
-    const isChangedMax = nextProps.max !== this.props.max;
-    const isChangedValue = nextProps.value !== this.props.value;
+    const {
+      max,
+      min,
+      value,
+    } = this.props;
+
+    const isChangedMin = nextProps.min !== min;
+    const isChangedMax = nextProps.max !== max;
+    const isChangedValue = nextProps.value !== value;
     const resultCondition = isChangedMin || isChangedMax || isChangedValue;
     if (resultCondition) {
       this.setStateFromProps(nextProps);
@@ -75,13 +88,18 @@ class InputNumber extends React.Component<InputNumberProps, InputNumberState>{
       disabledDecreasingBtn: false,
       disabledIncreasingBtn: false,
     };
-    const step = this.props.step || InputNumber.defaultProps.step;
+    const {
+      max,
+      min,
+      step = InputNumber.defaultProps.step,
+      value,
+    } = this.props;
 
     switch (btn.value) {
       case '-': {
         newState.value = this.state.value - step;
-        if (this.props.min !== undefined && newState.value <= this.props.min) {
-          newState.value = this.props.min;
+        if (min !== undefined && newState.value <= min) {
+          newState.value = min;
           newState.disabledDecreasingBtn = true;
         }
         break;
@@ -89,8 +107,8 @@ class InputNumber extends React.Component<InputNumberProps, InputNumberState>{
 
       case '+': {
         newState.value = this.state.value + step;
-        if (this.props.max !== undefined && newState.value >= this.props.max) {
-          newState.value = this.props.max;
+        if (max !== undefined && newState.value >= max) {
+          newState.value = max;
           newState.disabledIncreasingBtn = true;
         }
         break;

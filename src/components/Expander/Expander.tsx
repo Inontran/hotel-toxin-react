@@ -23,7 +23,6 @@ class Expander extends React.Component<ExpanderProps, ExpanderState> {
     return (
       <div
         className = { blockClasses.join(' ') }
-        id = { this.props.id || undefined }
       >
         <button 
           className = { styles.Btn }

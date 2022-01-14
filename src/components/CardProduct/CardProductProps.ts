@@ -1,10 +1,5 @@
 interface CardProductProps {
   /**
-   * id блока.
-   */
-  id?: string,
-
-  /**
    * Номер апартаментов.
    */
   roomNumber: string,

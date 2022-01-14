@@ -2,11 +2,6 @@ import HeadingSizes from './HeadingSizes';
 
 interface HeadingProps {
   /**
-   * id блока.
-   */
-  id?: string,
-
-  /**
    * Текст в заголовке.
    */
   text?: string,

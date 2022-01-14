@@ -1,10 +1,5 @@
 interface LikeBtnProps {
   /**
-   * id блока.
-   */
-  id?: string,
-
-  /**
    * Значение поля (количество лайков).
    */
   value?: string | number,

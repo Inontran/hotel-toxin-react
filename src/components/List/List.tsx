@@ -5,7 +5,6 @@ import ListThemes from './ListThemes';
 import styles from './List.module.scss';
 
 const List = ({
-  id = undefined,
   items = [],
   theme = [],
   ...props
@@ -22,7 +21,6 @@ const List = ({
   return (
     <ul
       className = { classes.join(' ') }
-      id = { id || undefined }
       { ...props }
     >
       {

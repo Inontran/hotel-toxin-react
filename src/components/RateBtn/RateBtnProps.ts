@@ -1,10 +1,5 @@
 interface RateBtnProps {
   /**
-   * id блока.
-   */
-  id?: string,
-
-  /**
    * Название input (атрибут name).
    * @default 'rate'
    */

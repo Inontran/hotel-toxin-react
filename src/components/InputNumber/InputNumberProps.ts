@@ -1,10 +1,5 @@
 interface InputNumberProps {
   /**
-   * ИД блока.
-   */
-  id?: string,
-
-  /**
    * Минимальное значение.
    */
   min?: number,

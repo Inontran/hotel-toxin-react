@@ -5,36 +5,34 @@ import CheckboxThemes from './CheckboxThemes';
 import styles from './Checkbox.module.scss';
 
 const Checkbox = ({
-  id = undefined,
-  tabIndex = undefined,
+  tabIndex,
   inputType = 'checkbox',
-  text = undefined,
-  title = undefined,
-  name = undefined,
-  value = undefined,
-  checked = undefined,
+  text,
+  title,
+  name,
+  value,
+  checked,
   theme = [],
   ...props
 }: CheckboxProps) => {
-  const classes = [styles.Checkbox];
+  const blockClasses = [styles.Checkbox];
 
   if (theme.indexOf(CheckboxThemes.toggle) != -1) {
-    classes.push(styles.type_toggle);
+    blockClasses.push(styles.type_toggle);
   }
 
   return (
     <div
-      className = { classes.join(' ') }
-      id = { id || undefined }
+      className = { blockClasses.join(' ') }
       { ...props }
     >
       <label className = { styles.Wrapper }>
         <input className = { styles.Input }
-          type = { inputType || undefined }
-          tabIndex = { tabIndex || undefined }
-          name = { name || undefined }
-          value = { value || undefined }
-          checked = { checked || undefined }
+          type = { inputType }
+          tabIndex = { tabIndex }
+          name = { name }
+          value = { value }
+          checked = { checked }
         />
         <span className = { styles.CustomInput }></span>
         {

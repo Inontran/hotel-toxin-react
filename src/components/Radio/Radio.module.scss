@@ -5,15 +5,15 @@
   display: block;
   line-height: 0.6;
 
-  & .Wrapper {
+  .Wrapper {
     display: inline-flex;
   }
 
-  & .Input {
+  .Input {
     display: none;
   }
 
-  & .CustomInput {
+  .CustomInput {
     position: relative;
     display: inline-block;
     width: calc-rem(20);
@@ -40,7 +40,7 @@
     }
   }
 
-  & .Input:checked ~ .CustomInput {
+  .Input:checked ~ .CustomInput {
     border-color: $purple;
 
     &::after {
@@ -48,7 +48,7 @@
     }
   }
 
-  & .Text {
+  .Text {
     line-height: 1.28;
     font-size: calc-rem(14);
     color: $dark50;
@@ -58,13 +58,13 @@
     cursor: pointer;
   }
 
-  & .Input:checked ~ .CustomInput,
-  & .Input:checked ~ .Text {
+  .Input:checked ~ .CustomInput,
+  .Input:checked ~ .Text {
     color: $dark75;
   }
 
-  & .Input:disabled ~ .CustomInput,
-  & .Input:disabled ~ .Text {
+  .Input:disabled ~ .CustomInput,
+  .Input:disabled ~ .Text {
     cursor: default;
   }
 }

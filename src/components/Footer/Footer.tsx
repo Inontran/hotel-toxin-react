@@ -14,10 +14,10 @@ import styles from './Footer.module.scss';
 
 const Footer = ({
   themes = [],
-  mainText = undefined,
-  subscriptionHeading = undefined,
-  subscriptionText = undefined,
-  copyrightText = undefined,
+  mainText,
+  subscriptionHeading,
+  subscriptionText,
+  copyrightText,
   menuItems = [],
   ...props
 }: FooterProps) => {
@@ -44,7 +44,7 @@ const Footer = ({
           menuItems.map((menu, index) => {
             if (index > 2) return null;
             return <div 
-              key = {Math.random() * 1000 * index}
+              key = { Math.random() * 1000 * index }
               className = { styles.NavItemsMenu }
             >
               {

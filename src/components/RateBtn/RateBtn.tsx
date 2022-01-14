@@ -5,12 +5,6 @@ import RateBtnState from './RateBtnState';
 import styles from './RateBtn.module.scss';
 
 class RateBtn extends React.Component<RateBtnProps, RateBtnState> {
-  static defaultProps: RateBtnProps = {
-    name: 'rate',
-    value: 0,
-    disabled: false,
-  };
-
   constructor(props: RateBtnProps) {
     super(props);
 
@@ -20,25 +14,29 @@ class RateBtn extends React.Component<RateBtnProps, RateBtnState> {
   }
   
   render() {
+    const {
+      name = 'rate',
+      disabled = false,
+    } = this.props;
+
     return (
       <div
         className = { styles.RateBtn }
-        id = { this.props.id }
       >
         <input
           className = { styles.Input }
           type = 'hidden'
           value = { this.state.value }
-          name = { this.props.name }
+          name = { name }
         />
         {
           [1, 2, 3, 4, 5].map((i) => {
             return <button
               className = { styles.StarItem }
-              key = { i }
+              key = { Math.random() * 1000 }
               value = { i }
               type = 'button'
-              disabled = { this.props.disabled }
+              disabled = { disabled }
               onClick = { this.onButtonClick }
             ></button>;
           })

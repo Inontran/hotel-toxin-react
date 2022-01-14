@@ -2,11 +2,6 @@ import CheckboxThemes from './CheckboxThemes';
 
 interface CheckboxProps {
   /**
-   * id блока.
-   */
-  id?: string,
-
-  /**
    * Tabindex чекбокса.
    */
   tabIndex?: number,

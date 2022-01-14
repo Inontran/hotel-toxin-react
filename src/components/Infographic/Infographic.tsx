@@ -4,14 +4,12 @@ import InfographicProps from './InfographicProps';
 import styles from './Infographic.module.scss';
 
 const Infographic = ({
-  id = undefined,
   items = [],
   ...props
 }: InfographicProps) => {
   return (
     <ul
       className = { styles.Infographic }
-      id = { id || undefined }
       { ...props }
     >
       {
