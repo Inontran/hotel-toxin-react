@@ -65,11 +65,11 @@ const Footer = ({
                         className = { styles.ListLink }
                         href = { item.href }
                       >{item.name}</a>
-                    )
+                    );
                   })
                 }
               </nav>
-            </div>
+            </div>;
           })
         }
 
@@ -100,31 +100,31 @@ const Footer = ({
                 src: require('../../shared/img/twitter-icon.svg'),
                 href: '//twitter.com/',
                 alt: 'twit',
-                title: 'Twitter'
+                title: 'Twitter',
               },
               {
                 src: require('../../shared/img/fb-icon.svg'),
                 href: '//facebook.com/',
                 alt: 'fb',
-                title: 'Facebook'
+                title: 'Facebook',
               },
               {
                 src: require('../../shared/img/insta-icon.svg'),
                 href: '//instagram.com/',
                 alt: 'insta',
-                title: 'Instagram'
-              }
+                title: 'Instagram',
+              },
             ]}
           />
         </div>
       </div>
     </footer>
-  )
-}
+  );
+};
 
 export {
   FooterProps,
   FooterMenu,
   FooterThemes,
-}
+};
 export default Footer;

@@ -5,7 +5,7 @@ import Datepicker from '../Datepicker/Datepicker';
 
 import Dropdown, {
   DropdownProps,
-  DropdownThemes
+  DropdownThemes,
 } from './Dropdown';
 import DropdownDatepickerState from './DropdownDatepickerState';
 import styles from './DoubleDropdownDatepicker.module.scss';
@@ -29,22 +29,22 @@ class DoubleDropdownDatepicker extends React.Component<DropdownProps, DropdownDa
       <div className = { styles.DropdownWrapper }>
         <Dropdown
           theme = {[DropdownThemes.withDates]}
-          inputTextProps = {{ value: this.state.formattedDateStart, }}
+          inputTextProps = {{ value: this.state.formattedDateStart }}
           label = 'Прибытие'
           isShow = { this.state.isShow }
           toggleCallback = {(isShow) => {
-            this.setState({ isShow: isShow, });
+            this.setState({ isShow: isShow });
           }}
         />
       </div>
       <div className = { styles.DropdownWrapper }>
         <Dropdown
           theme = {[DropdownThemes.withDates, DropdownThemes.alignRight]}
-          inputTextProps = {{ value: this.state.formattedDateEnd, }}
+          inputTextProps = {{ value: this.state.formattedDateEnd }}
           label = 'Выезд'
           isShow = { this.state.isShow }
           toggleCallback = {(isShow) => {
-            this.setState({ isShow: isShow, });
+            this.setState({ isShow: isShow });
           }}
         >
           <Datepicker
@@ -53,7 +53,7 @@ class DoubleDropdownDatepicker extends React.Component<DropdownProps, DropdownDa
           />
         </Dropdown>
       </div>
-    </div>
+    </div>;
   }
 
   shouldComponentUpdate(nextProps: DropdownProps, nextState: DropdownDatepickerState): boolean {
@@ -75,7 +75,7 @@ class DoubleDropdownDatepicker extends React.Component<DropdownProps, DropdownDa
       formattedDateStart: '',
       formattedDateEnd: '',
     });
-  }
+  };
 
   private onDatepickerSubmit = (selectedDates: Date[]) => {
     if (selectedDates.length !== 2) {
@@ -88,7 +88,7 @@ class DoubleDropdownDatepicker extends React.Component<DropdownProps, DropdownDa
       formattedDateStart: this.getFormattedDate(selectedDates[0]),
       formattedDateEnd: this.getFormattedDate(selectedDates[1]),
     });
-  }
+  };
 
   private formatDates(dates: Date[]): string {
     let formatDateOutput = 'D MMM';
@@ -98,10 +98,10 @@ class DoubleDropdownDatepicker extends React.Component<DropdownProps, DropdownDa
     }
 
     let formattedDates = '';
-    if( dates[0] ) {
+    if ( dates[0] ) {
       formattedDates += moment(dates[0]).format(formatDateOutput);
     }
-    if( dates[1] ) {
+    if ( dates[1] ) {
       formattedDates += ' — ';
       formattedDates += moment(dates[1]).format(formatDateOutput);
     }
@@ -112,7 +112,7 @@ class DoubleDropdownDatepicker extends React.Component<DropdownProps, DropdownDa
   private getFormattedDate(date: Date): string {
     const formatDateOutput = 'DD.MM.YYYY';
     let formattedDates = '';
-    if( date ) {
+    if ( date ) {
       formattedDates += moment(date).format(formatDateOutput);
     }
 

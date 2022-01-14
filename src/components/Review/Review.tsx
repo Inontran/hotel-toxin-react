@@ -15,8 +15,6 @@ const Review = ({
   textReview,
   ...props
 }: ReviewProps) => {
-  console.log(noPhoto);
-
   return (
     <article
       className = { styles.Review }
@@ -51,7 +49,7 @@ const Review = ({
         <p className = { styles.Text }>{textReview}</p>
       </div>
     </article>
-  )
-}
+  );
+};
 
 export default Review;

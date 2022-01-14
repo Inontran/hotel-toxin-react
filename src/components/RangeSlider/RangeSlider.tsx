@@ -3,7 +3,7 @@ import ReactSlider from 'react-slider';
 
 import { RUBLE_SIGN } from '../../shared/constants';
 import Heading, {
-  HeadingSizes
+  HeadingSizes,
 } from '../Heading/Heading';
 
 import RangeSliderProps from './RangeSliderProps';
@@ -18,7 +18,7 @@ class RangeSlider extends React.Component<RangeSliderProps, RangeSliderState> {
     this.state = {
       startVal: this.props.val1 || this.props.min || 0,
       endVal: this.props.val2 || this.props.max,
-    }
+    };
   }
 
   render() {
@@ -81,7 +81,7 @@ class RangeSlider extends React.Component<RangeSliderProps, RangeSliderState> {
           <p className = { styles.Text }>{textBottom}</p>
         }
       </div>
-    )
+    );
   }
 
   shouldComponentUpdate(nextProps: RangeSliderProps, nextState: RangeSliderState): boolean{
@@ -101,8 +101,8 @@ class RangeSlider extends React.Component<RangeSliderProps, RangeSliderState> {
     this.setState({
       startVal: values[0],
       endVal: values[1],
-    })
-  }
+    });
+  };
 
   private renderTrack = (props: any, state: {
     index: number;
@@ -117,12 +117,12 @@ class RangeSlider extends React.Component<RangeSliderProps, RangeSliderState> {
         {...props}
         className = { `${styles.Track} ${styles['Track_' + state.index]}`}
       ></div>
-    )
-  }
+    );
+  };
 }
 
 export {
   RangeSliderProps,
   RangeSliderState,
-}
+};
 export default RangeSlider;

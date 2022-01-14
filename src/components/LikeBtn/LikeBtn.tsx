@@ -8,11 +8,7 @@ class LikeBtn extends React.PureComponent<LikeBtnProps> {
     value: 0,
     name: 'like',
     isLike: false,
-  }
-
-  constructor(props: LikeBtnProps) {
-    super(props);
-  }
+  };
 
   render() {
     return (
@@ -31,7 +27,7 @@ class LikeBtn extends React.PureComponent<LikeBtnProps> {
           <span className = { styles.Amount }>{this.props.value}</span>
         </span>
       </label>
-    )
+    );
   }
 }
 

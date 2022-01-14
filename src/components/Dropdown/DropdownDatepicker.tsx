@@ -5,7 +5,7 @@ import Datepicker from '../Datepicker/Datepicker';
 
 import Dropdown, {
   DropdownProps,
-  DropdownThemes
+  DropdownThemes,
 } from './Dropdown';
 import DropdownDatepickerProps from './DropdownDatepickerProps';
 import DropdownDatepickerState from './DropdownDatepickerState';
@@ -27,11 +27,11 @@ class DropdownDatepicker extends React.Component<DropdownDatepickerProps, Dropdo
   render() {
     return <Dropdown
       theme = {[DropdownThemes.withDates]}
-      inputTextProps = {{ value: this.state.formattedDatesRange, }}
+      inputTextProps = {{ value: this.state.formattedDatesRange }}
       {...this.props}
       isShow = { this.state.isShow }
       toggleCallback = {(isShow) => {
-        this.setState({ isShow: isShow, });
+        this.setState({ isShow: isShow });
       }}
     >
       <Datepicker
@@ -40,7 +40,7 @@ class DropdownDatepicker extends React.Component<DropdownDatepickerProps, Dropdo
         minDate = { this.props.minDate }
         onChange = { this.props.onChange }
       />
-    </Dropdown>
+    </Dropdown>;
   }
 
   shouldComponentUpdate(nextProps: DropdownProps, nextState: DropdownDatepickerState): boolean {
@@ -60,7 +60,7 @@ class DropdownDatepicker extends React.Component<DropdownDatepickerProps, Dropdo
       isShow: false,
       formattedDatesRange: '',
     });
-  }
+  };
 
   private onDatepickerSubmit = (selectedDates: Date[]) => {
     if (selectedDates.length !== 2) {
@@ -71,7 +71,7 @@ class DropdownDatepicker extends React.Component<DropdownDatepickerProps, Dropdo
       isShow: false,
       formattedDatesRange: this.formatDates(selectedDates),
     });
-  }
+  };
 
   private formatDates(dates: Date[]): string {
     let formatDateOutput = 'D MMM';
@@ -81,10 +81,10 @@ class DropdownDatepicker extends React.Component<DropdownDatepickerProps, Dropdo
     }
 
     let formattedDates = '';
-    if( dates[0] ) {
+    if ( dates[0] ) {
       formattedDates += moment(dates[0]).format(formatDateOutput);
     }
-    if( dates[1] ) {
+    if ( dates[1] ) {
       formattedDates += ' — ';
       formattedDates += moment(dates[1]).format(formatDateOutput);
     }
@@ -95,5 +95,5 @@ class DropdownDatepicker extends React.Component<DropdownDatepickerProps, Dropdo
 
 export {
   DropdownDatepickerProps,
-}
+};
 export default DropdownDatepicker;

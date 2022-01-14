@@ -60,13 +60,13 @@ class Header extends React.PureComponent<HeaderProps, HeaderState> {
                       href = { menuItem.href }
                     >{menuItem.name}</a>
                   </li>
-                )
+                );
               })
             }
           </ul>
           {
             username
-            ? <>
+              ? <>
               <a
                 className = { styles.IconBtn + ' ' + styles.type_profile }
                 href = '/mock-address/change-me'
@@ -82,7 +82,7 @@ class Header extends React.PureComponent<HeaderProps, HeaderState> {
                 href = '/mock-address/change-me'
               >{username}</a>
             </>
-            : <>
+              : <>
               <button
                 className = { styles.IconBtn + ' ' + styles.profile }
                 type = 'button'
@@ -127,24 +127,24 @@ class Header extends React.PureComponent<HeaderProps, HeaderState> {
           </button>
         </nav>
       </header>
-    )
+    );
   }
 
   private handlerBtnMenuClick = () => {
     this.setState({
       isShowMainMenu: !this.state.isShowMainMenu,
     });
-  }
+  };
 
   private handlerToggleAuthBtnsClick = () => {
     this.setState({
       isShowAuthBtns: !this.state.isShowAuthBtns,
     });
-  }
+  };
 }
 
 export {
   HeaderProps,
   HeaderMenuItem,
-}
+};
 export default Header;

@@ -12,11 +12,7 @@ class InputText extends React.Component<InputTextProps> {
   static defaultProps: InputTextProps = {
     type: 'text',
     theme: [],
-  }
-
-  constructor(props: InputTextProps) {
-    super(props);
-  }
+  };
 
   render() {
     const blockClasses = [styles.InputText];
@@ -71,12 +67,12 @@ class InputText extends React.Component<InputTextProps> {
           onClick = { this.props.onClick }
         />
       </label>
-    )
+    );
   }
 }
 
 export {
   InputTextProps,
   InputTextThemes,
-}
+};
 export default InputText;

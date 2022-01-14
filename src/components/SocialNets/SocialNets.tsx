@@ -35,11 +35,11 @@ const SocialNets = ({
                 />
               </a>
             </li>
-          )
+          );
         })
       }
     </ul>
-  )
-}
+  );
+};
 
 export default SocialNets;

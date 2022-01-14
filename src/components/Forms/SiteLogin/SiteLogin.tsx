@@ -13,7 +13,7 @@ import SiteLoginProps from './SiteLoginProps';
 import styles from './SiteLogin.module.scss';
 
 class SiteLogin extends React.PureComponent<SiteLoginProps> {
-  render () {
+  render() {
     const {
       buttonRegHref = undefined,
     } = this.props;
@@ -63,11 +63,11 @@ class SiteLogin extends React.PureComponent<SiteLoginProps> {
           </div>
         }
       </form>
-    )
+    );
   }
 }
 
 export {
   SiteLoginProps,
-}
+};
 export default SiteLogin;

@@ -16,7 +16,7 @@ class Subscription extends React.PureComponent {
         />
         <button className = { styles.SubmitBtn }></button>
       </form>
-    )
+    );
   }
 }
 

@@ -13,12 +13,13 @@ import styles from './Dropdown.module.scss';
 
 class Dropdown extends React.Component<DropdownProps, DropdownState> {
   private dropdownRef: RefObject<HTMLDivElement>;
+
   constructor(props: DropdownProps) {
     super(props);
 
     this.state = {
       isShow: this.props.isShow || false,
-    }
+    };
 
     this.dropdownRef = React.createRef();
   }
@@ -29,7 +30,6 @@ class Dropdown extends React.Component<DropdownProps, DropdownState> {
     return (
       <div
         className = { blockClasses.join(' ') }
-        id = { this.props.id }
         ref = { this.dropdownRef }
         tabIndex = { this.props.tabIndex || 1 }
         onBlur = { this.handlerDropdownBlur }
@@ -57,7 +57,7 @@ class Dropdown extends React.Component<DropdownProps, DropdownState> {
           </div>
         }
       </div>
-    )
+    );
   }
 
   shouldComponentUpdate(nextProps: DropdownProps, nextState: DropdownState): boolean {
@@ -85,7 +85,7 @@ class Dropdown extends React.Component<DropdownProps, DropdownState> {
     this.setState({
       isShow: !this.state.isShow,
     });
-  }
+  };
 
   private handlerDropdownBlur = (event: React.FocusEvent) => {
     // условие работает неправильно при выборе даты следующего или предыдущего месяца в календаре.
@@ -95,7 +95,7 @@ class Dropdown extends React.Component<DropdownProps, DropdownState> {
         isShow: false,
       });
     }
-  }
+  };
 
   private getBlockClasses(): string[]{
     const blockClasses = [styles.Dropdown];
@@ -135,5 +135,5 @@ export {
   DropdownProps,
   DropdownState,
   DropdownThemes,
-}
+};
 export default Dropdown;

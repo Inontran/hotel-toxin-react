@@ -16,6 +16,31 @@ import RoomReservationState from './RoomReservationState';
 import ServiceItem from './ServiceItem';
 import styles from './RoomReservation.module.scss';
 
+const ServiceRow = ({
+  tooltip,
+  name,
+  price,
+  ...props
+}: ServiceItem) => {
+  return (
+    <tr>
+      {
+        tooltip
+          ? <td className = { styles.TableCell + ' ' + styles.withTooltip }>
+          {name}
+          <div className = { styles.Tooltip } title = { tooltip }></div>
+        </td>
+          : <td className = { styles.TableCell }>
+          {name}
+        </td>
+      }
+      <td className = { styles.TableCell + ' ' + styles.withPrice }>
+        {formatPrice(price)}
+      </td>
+    </tr>
+  );
+};
+
 class RoomReservation extends React.PureComponent<RoomReservationProps, RoomReservationState> {
   constructor(props: RoomReservationProps) {
     super(props);
@@ -70,7 +95,7 @@ class RoomReservation extends React.PureComponent<RoomReservationProps, RoomRese
         <div className = { styles.InputWrapper }>
           <Dropdown
             label = 'Гости'
-            inputTextProps={{placeholder: 'Сколько гостей'}}
+            inputTextProps={{ placeholder: 'Сколько гостей' }}
           />
         </div>
         {
@@ -90,7 +115,7 @@ class RoomReservation extends React.PureComponent<RoomReservationProps, RoomRese
                     return <ServiceRow
                       key = { Math.random() * 1000 }
                       {...service}
-                    />
+                    />;
                   })
                 }
               </tbody>
@@ -110,7 +135,7 @@ class RoomReservation extends React.PureComponent<RoomReservationProps, RoomRese
           width = { ButtonWidth.fullWidth }
         />
       </form>
-    )
+    );
   }
 
   private handlerDatepcikerChange = (selectedDates: Date[]) => {
@@ -120,7 +145,7 @@ class RoomReservation extends React.PureComponent<RoomReservationProps, RoomRese
       countDaysInRoom: countDaysInRoom,
       totalPrice: this.calcTotalPrice(countDaysInRoom),
     });
-  }
+  };
 
   private getCountDaysBetweenDates(dateStart: Date, dateEnd: Date): number {
     if (!dateStart || !dateEnd) {
@@ -144,35 +169,10 @@ class RoomReservation extends React.PureComponent<RoomReservationProps, RoomRese
     });
 
     return totalPrice;
-  }
-}
-
-const ServiceRow = ({
-  tooltip,
-  name,
-  price,
-  ...props
-}: ServiceItem) => {
-  return (
-    <tr>
-      {
-        tooltip
-        ? <td className = { styles.TableCell + ' ' + styles.withTooltip }>
-          {name}
-          <div className = { styles.Tooltip } title = { tooltip }></div>
-        </td>
-        : <td className = { styles.TableCell }>
-          {name}
-        </td>
-      }
-      <td className = { styles.TableCell + ' ' + styles.withPrice }>
-        {formatPrice(price)}
-      </td>
-    </tr>
-  )
+  };
 }
 
 export {
   RoomReservationProps,
-}
+};
 export default RoomReservation;

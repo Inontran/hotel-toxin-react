@@ -5,11 +5,7 @@ import PaginationProps from './PaginationProps';
 import styles from './Pagination.module.scss';
 
 class Pagination extends React.PureComponent<PaginationProps> {
-  constructor(props: PaginationProps) {
-    super(props);
-  }
-
-  render () {
+  render() {
     const {
       pageCount = 0,
       currentPage = 1,
@@ -22,8 +18,8 @@ class Pagination extends React.PureComponent<PaginationProps> {
             pageRangeDisplayed = {3}
             marginPagesDisplayed = {1}
             pageCount = {pageCount}
-            initialPage = {currentPage-1}
-            forcePage = {currentPage-1}
+            initialPage = {currentPage - 1}
+            forcePage = {currentPage - 1}
             pageClassName = { styles.BtnWrapper }
             pageLinkClassName = { styles.Number }
             previousClassName = { styles.BtnWrapper }
@@ -39,7 +35,7 @@ class Pagination extends React.PureComponent<PaginationProps> {
             renderOnZeroPageCount = {() => { return null; }}
           />
         </div>
-      )
+      );
     } else {
       return null;
     }
@@ -48,5 +44,5 @@ class Pagination extends React.PureComponent<PaginationProps> {
 
 export {
   PaginationProps,
-}
+};
 export default Pagination;

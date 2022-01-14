@@ -1,4 +1,4 @@
-function formatPrice (price: number): string {
+function formatPrice(price: number): string {
   const formatter = Intl.NumberFormat('ru-RU', {
     style: 'currency',
     currency: 'RUB',
@@ -26,4 +26,4 @@ function declineWord(number: number, titles: string[]) {
 export {
   formatPrice,
   declineWord,
-}
+};

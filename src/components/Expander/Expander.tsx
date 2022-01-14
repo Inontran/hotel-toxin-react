@@ -16,7 +16,7 @@ class Expander extends React.Component<ExpanderProps, ExpanderState> {
   render() {
     const blockClasses: Array<string> = [styles.Expander];
 
-    if( this.state.isOpen ) {
+    if ( this.state.isOpen ) {
       blockClasses.push(styles.activated);
     }
 
@@ -37,7 +37,7 @@ class Expander extends React.Component<ExpanderProps, ExpanderState> {
           {this.props.children}
         </div>
       </div>
-    )
+    );
   }
 
   shouldComponentUpdate(nextProps: ExpanderProps, nextState: ExpanderState): boolean {
@@ -56,7 +56,7 @@ class Expander extends React.Component<ExpanderProps, ExpanderState> {
     this.setState({
       isOpen: !this.state.isOpen,
     });
-  }
+  };
 }
 
-export default Expander
+export default Expander;

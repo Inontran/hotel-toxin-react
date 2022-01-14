@@ -1,6 +1,6 @@
 import React from 'react';
 import AirDatepicker, {
-  AirDatepickerOptions
+  AirDatepickerOptions,
 } from 'air-datepicker';
 
 import Button from '../Button/Button';
@@ -12,6 +12,7 @@ import styles from './Datepicker.module.scss';
 
 class Datepicker extends React.Component<DatepickerProps, DatepickerState> {
   private airDatepickerWrapperRef: React.RefObject<HTMLDivElement>;
+
   private airDatepicker!: AirDatepicker;
 
   constructor(props: DatepickerProps) {
@@ -51,7 +52,7 @@ class Datepicker extends React.Component<DatepickerProps, DatepickerState> {
           </div>
         </div>
       </div>
-    )
+    );
   }
 
   componentDidMount() {
@@ -71,13 +72,13 @@ class Datepicker extends React.Component<DatepickerProps, DatepickerState> {
         },
         minDate: minDate || undefined,
         selectedDates: selectedDates || undefined,
-        onSelect: ({date, formattedDate, datepicker}) => {
+        onSelect: ({datepicker}) => {
           this.setState({
             isResetBtnVisible: datepicker.selectedDates.length ? true : false,
           });
           
           onChange && onChange(datepicker.selectedDates);
-        }
+        },
       });
 
       this.setState({
@@ -111,15 +112,15 @@ class Datepicker extends React.Component<DatepickerProps, DatepickerState> {
   private onResetButtonClick = () => {
     this.airDatepicker.clear();
     this.props.resetCallback && this.props.resetCallback();
-  }
+  };
 
   private onSubmitButtonClick = () => {
     this.props.submitCallback && this.props.submitCallback(this.airDatepicker.selectedDates);
-  }
+  };
 }
 
 export {
   DatepickerProps,
   DatepickerState,
-}
+};
 export default Datepicker;

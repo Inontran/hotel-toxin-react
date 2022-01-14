@@ -9,7 +9,7 @@ class RateBtn extends React.Component<RateBtnProps, RateBtnState> {
     name: 'rate',
     value: 0,
     disabled: false,
-  }
+  };
 
   constructor(props: RateBtnProps) {
     super(props);
@@ -40,11 +40,11 @@ class RateBtn extends React.Component<RateBtnProps, RateBtnState> {
               type = 'button'
               disabled = { this.props.disabled }
               onClick = { this.onButtonClick }
-            ></button>
+            ></button>;
           })
         }
       </div>
-    )
+    );
   }
 
   shouldComponentUpdate(nextProps: RateBtnProps, nextState: RateBtnState): boolean {
@@ -70,7 +70,7 @@ class RateBtn extends React.Component<RateBtnProps, RateBtnState> {
     this.setState({
       value: newValue,
     });
-  }
+  };
 }
 
 export default RateBtn;

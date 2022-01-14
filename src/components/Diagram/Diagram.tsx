@@ -18,7 +18,7 @@ class Diagram extends React.Component<DiagramProps>{
     labelNotbad: 'Удовлетворительно',
     labelDisappointed: 'Разочарован',
     chartCountAllText: 'голосов',
-  }
+  };
 
   private chartPictureRef: React.RefObject<HTMLCanvasElement>;
 
@@ -97,7 +97,7 @@ class Diagram extends React.Component<DiagramProps>{
           </ul>
         </div>
       </div>
-    )
+    );
   }
 
   componentDidMount() {

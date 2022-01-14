@@ -24,14 +24,14 @@ const Button = ({
       classes.push(styles.size_md);
       break;
     }
-  };
+  }
 
   switch (width) {
     case ButtonWidth.fullWidth:{
       classes.push(styles.wide);
       break;
     }
-  };
+  }
 
   if (theme.indexOf(ButtonThemes.purple) != -1) {
     classes.push(styles.filled_blueGreenGradient);
@@ -59,7 +59,7 @@ const Button = ({
           text && <span className = { styles.Text }>{text}</span>
         }
       </a>
-    )
+    );
   } else {
     return (
       <button
@@ -73,7 +73,7 @@ const Button = ({
           text && <span className = { styles.Text }>{text}</span>
         }
       </button>
-    )
+    );
   }
 
 };
@@ -83,5 +83,5 @@ export {
   ButtonSizes,
   ButtonThemes,
   ButtonWidth,
-}
+};
 export default Button;

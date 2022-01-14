@@ -26,7 +26,7 @@ const Heading = ({
       classes.push(styles.size_small);
       break;
     }
-  };
+  }
 
   switch (tag) {
     case 'h1':
@@ -36,7 +36,7 @@ const Heading = ({
           id = { id || undefined }
           { ...props }
         >{text}</h1>
-      )
+      );
 
     case 'h2':
       return (
@@ -45,7 +45,7 @@ const Heading = ({
           id = { id || undefined }
           { ...props }
         >{text}</h2>
-      )
+      );
 
     case 'h3':
       return (
@@ -54,7 +54,7 @@ const Heading = ({
           id = { id || undefined }
           { ...props }
         >{text}</h3>
-      )
+      );
 
     case 'h4':
       return (
@@ -63,7 +63,7 @@ const Heading = ({
           id = { id || undefined }
           { ...props }
         >{text}</h4>
-      )
+      );
 
     case 'h5':
       return (
@@ -72,7 +72,7 @@ const Heading = ({
           id = { id || undefined }
           { ...props }
         >{text}</h5>
-      )
+      );
 
     case 'h6':
       return (
@@ -81,7 +81,7 @@ const Heading = ({
           id = { id || undefined }
           { ...props }
         >{text}</h6>
-      )
+      );
 
     case 'span':
       return (
@@ -90,7 +90,7 @@ const Heading = ({
           id = { id || undefined }
           { ...props }
         >{text}</span>
-      )
+      );
   
     default:
       return (
@@ -106,6 +106,6 @@ const Heading = ({
 export {
   HeadingProps,
   HeadingSizes,
-}
+};
 export default Heading;
 

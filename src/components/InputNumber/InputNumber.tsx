@@ -9,7 +9,7 @@ class InputNumber extends React.Component<InputNumberProps, InputNumberState>{
   static defaultProps: InputNumberDefaultProps = {
     step: 1,
     value: 0,
-  }
+  };
 
   constructor(props: InputNumberProps) {
     super(props);
@@ -51,7 +51,7 @@ class InputNumber extends React.Component<InputNumberProps, InputNumberState>{
           <span className = { styles.BtnText }>+</span>
         </button>
       </div>
-    )
+    );
   }
 
   shouldComponentUpdate(nextProps: InputNumberProps, nextState: InputNumberState): boolean {
@@ -100,7 +100,7 @@ class InputNumber extends React.Component<InputNumberProps, InputNumberState>{
     if (this.state.value !== newState.value) {
       this.setState(newState);
     }
-  }
+  };
 
   private setStateFromProps(props: InputNumberProps) {
     let initialValue = props.value || this.props.value || InputNumber.defaultProps.value;

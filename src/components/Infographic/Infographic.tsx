@@ -37,12 +37,12 @@ const Infographic = ({
                 <p className = { styles.Text }>{item.text}</p>
               </div>
             </li>
-          )
+          );
         })
       }
     </ul>
-  )
-}
+  );
+};
 
 export default Infographic;
 

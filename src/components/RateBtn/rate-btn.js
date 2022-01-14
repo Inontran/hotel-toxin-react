@@ -4,7 +4,9 @@ import './rate-btn.scss';
 
 class RateBtn {
   _$rateBtn;
+
   _$input;
+
   _$stars;
 
   constructor($rateBtn) {
@@ -45,4 +47,4 @@ class RateBtn {
   }
 }
 
-export default RateBtn
+export default RateBtn;

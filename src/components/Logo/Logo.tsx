@@ -21,10 +21,10 @@ const Logo = ({
         alt = 'Logo'
       />
     </a>
-  )
-}
+  );
+};
 
 export {
   LogoProps,
-}
+};
 export default Logo;

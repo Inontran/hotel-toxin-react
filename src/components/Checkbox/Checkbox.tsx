@@ -52,7 +52,7 @@ const Checkbox = ({
         }
       </label>
     </div>
-  )
+  );
 
 };
 

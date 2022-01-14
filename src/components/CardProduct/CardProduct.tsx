@@ -25,10 +25,6 @@ import styles from './CardProduct.module.scss';
 import './CardProduct.scss';
 
 class CardProduct extends Component<CardProductProps> {
-  constructor(props: CardProductProps) {
-    super(props);
-  }
-
   render() {
     const {
       id = undefined,
@@ -70,7 +66,7 @@ class CardProduct extends Component<CardProductProps> {
                         alt = { 'фото номера ' + roomNumber }
                       />
                     </div>
-                  </SwiperSlide>
+                  </SwiperSlide>;
                 })
               }
             </Swiper>
@@ -101,22 +97,22 @@ class CardProduct extends Component<CardProductProps> {
             </div>
               {
                 countReviews
-                ? <div className = { styles.CountReviewsWrapper }>
+                  ? <div className = { styles.CountReviewsWrapper }>
                   <span className = { styles.ReviewsCountNumber }>{countReviews}</span>
                   <span className = { styles.ReviewsCountText }> Отзывов</span>
                 </div>
-                : <div className = { styles.CountReviewsWrapper }>
+                  : <div className = { styles.CountReviewsWrapper }>
                 <span className = { styles.ReviewsCountText }>нет отзывов</span>
               </div>
               }
           </div>
         </div>
       </article>
-    )
+    );
   }
 }
 
 export {
   CardProductProps,
-}
+};
 export default CardProduct;

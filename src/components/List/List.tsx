@@ -37,7 +37,7 @@ const List = ({
                   {item.text}
                 </a>
               </li>
-            )
+            );
           } else {
             return (
               <li
@@ -46,7 +46,7 @@ const List = ({
               >
                 { item.text }
               </li>
-            )
+            );
           }
         })
       }
