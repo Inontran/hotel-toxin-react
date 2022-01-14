@@ -1,10 +1,5 @@
 interface AirDatepickerProps {
   /**
-   * Id блока.
-   */
-  id?: string,
-
-  /**
    * Минимальная дата, которую можно выбрать.
    */
   minDate?: Date,
@@ -14,9 +9,20 @@ interface AirDatepickerProps {
    */
   selectedDates?: Date[] | string[] | number[],
 
+  /**
+   * Функция обратного вызова после сброса выбранных дат.
+   */
   resetCallback?: () => void,
 
+  /**
+   * Функция обратного вызова после подтверждения выбранных дат.
+   */
   submitCallback?: (selectedDates: Date[]) => void,
+
+  /**
+   * Функция обратного вызова после изменения выбранных дат.
+   */
+  onChange?: (selectedDates: Date[]) => void,
 }
 
 export default AirDatepickerProps;

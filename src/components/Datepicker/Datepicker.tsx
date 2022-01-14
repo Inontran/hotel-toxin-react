@@ -28,7 +28,6 @@ class Datepicker extends React.Component<DatepickerProps, DatepickerState> {
     return (
       <div
         className = { styles.Datepicker }
-        id = { this.props.id }
       >
         <div
           className = { styles.Wrapper }
@@ -56,6 +55,12 @@ class Datepicker extends React.Component<DatepickerProps, DatepickerState> {
   }
 
   componentDidMount() {
+    const {
+      minDate,
+      selectedDates,
+      onChange,
+    } = this.props;
+
     const airDatepickerWrapper = this.airDatepickerWrapperRef.current;
     if (airDatepickerWrapper && !this.airDatepicker) {
       this.airDatepicker = new AirDatepicker(airDatepickerWrapper, {
@@ -64,12 +69,14 @@ class Datepicker extends React.Component<DatepickerProps, DatepickerState> {
         navTitles: {
           days: 'MMMM yyyy',
         },
-        minDate: this.props.minDate || undefined,
-        selectedDates: this.props.selectedDates || undefined,
+        minDate: minDate || undefined,
+        selectedDates: selectedDates || undefined,
         onSelect: ({date, formattedDate, datepicker}) => {
           this.setState({
-            isResetBtnVisible: !!datepicker.selectedDates.length,
+            isResetBtnVisible: datepicker.selectedDates.length ? true : false,
           });
+          
+          onChange && onChange(datepicker.selectedDates);
         }
       });
 
@@ -103,15 +110,11 @@ class Datepicker extends React.Component<DatepickerProps, DatepickerState> {
 
   private onResetButtonClick = () => {
     this.airDatepicker.clear();
-    if (this.props.resetCallback) {
-      this.props.resetCallback();
-    }
+    this.props.resetCallback && this.props.resetCallback();
   }
 
   private onSubmitButtonClick = () => {
-    if (this.props.submitCallback) {
-      this.props.submitCallback(this.airDatepicker.selectedDates);
-    }
+    this.props.submitCallback && this.props.submitCallback(this.airDatepicker.selectedDates);
   }
 }
 

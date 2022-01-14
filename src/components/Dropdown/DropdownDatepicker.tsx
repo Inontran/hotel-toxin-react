@@ -7,12 +7,13 @@ import Dropdown, {
   DropdownProps,
   DropdownThemes
 } from './Dropdown';
+import DropdownDatepickerProps from './DropdownDatepickerProps';
 import DropdownDatepickerState from './DropdownDatepickerState';
 
 moment.lang('ru');
 
-class DropdownDatepicker extends React.Component<DropdownProps, DropdownDatepickerState> {
-  constructor(props: DropdownProps) {
+class DropdownDatepicker extends React.Component<DropdownDatepickerProps, DropdownDatepickerState> {
+  constructor(props: DropdownDatepickerProps) {
     super(props);
 
     this.state = {
@@ -36,6 +37,8 @@ class DropdownDatepicker extends React.Component<DropdownProps, DropdownDatepick
       <Datepicker
         resetCallback = { this.onDatepickerReset }
         submitCallback = { this.onDatepickerSubmit }
+        minDate = { this.props.minDate }
+        onChange = { this.props.onChange }
       />
     </Dropdown>
   }
@@ -90,4 +93,7 @@ class DropdownDatepicker extends React.Component<DropdownProps, DropdownDatepick
   }
 }
 
+export {
+  DropdownDatepickerProps,
+}
 export default DropdownDatepicker;

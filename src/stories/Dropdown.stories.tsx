@@ -29,6 +29,7 @@ const Template2: ComponentStory<typeof DropdownDatepicker> = (args) => <Dropdown
 export const DefaultDropdownDatepicker = Template2.bind({});
 DefaultDropdownDatepicker.args = {
   label: 'Даты пребывания в отеле',
+  minDate: new Date(),
 };
 
 const Template3: ComponentStory<typeof DoubleDropdownDatepicker> = (args) => <DoubleDropdownDatepicker {...args} />;

@@ -1,12 +1,7 @@
 import InputTextProps from '../InputText/InputTextProps';
 import DropdownThemes from './DropdownThemes';
 
-interface AirDatepickerProps {
-  /**
-   * Id блока.
-   */
-  id?: string,
-
+interface DropdownProps {
   /**
    * Отображется ли содержимое dropdown при инициализации.
    */
@@ -39,4 +34,4 @@ interface AirDatepickerProps {
   toggleCallback?: (isShow: boolean) => void,
 }
 
-export default AirDatepickerProps;
+export default DropdownProps;
