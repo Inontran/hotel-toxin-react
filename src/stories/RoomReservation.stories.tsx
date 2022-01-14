@@ -2,7 +2,7 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import '../global-styles/global.scss';
-import { RUBLE_SIGN } from '../shared/constants';
+import { formatPrice } from '../shared/functions';
 import RoomReservation, {
   RoomReservationProps,
 } from '../components/Forms/RoomReservation/RoomReservation';
@@ -26,11 +26,7 @@ const DefaultRoomReservationArgs: RoomReservationProps = {
   roomType: 'люкс',
   listService: [
     {
-      name: '9 990₽ х 4 суток',
-      price: 666
-    },
-    {
-      name: 'Сбор за услуги: скидка 2 179' + RUBLE_SIGN,
+      name: 'Сбор за услуги: скидка ' + formatPrice(2179),
       price: 0,
       tooltip: 'Да-да, за даром!',
     },

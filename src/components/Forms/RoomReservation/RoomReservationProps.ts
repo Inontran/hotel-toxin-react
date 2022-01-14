@@ -17,11 +17,6 @@ interface RoomReservationProps {
   roomPrice: number,
 
   /**
-    * За какой период указана стоимость, например, "в сутки" или "в неделю".
-    */
-  priceTime?: string,
-
-  /**
    * Список услуг.
    */
   listService?: Array<ServiceItem>,
