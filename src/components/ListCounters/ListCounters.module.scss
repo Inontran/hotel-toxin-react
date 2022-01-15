@@ -1,0 +1,41 @@
+@import '../../global-styles/functions.scss';
+
+.ListCounters {
+  .Counter,
+  .Btns {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .Counter {
+    margin: 7px 7px 7px 15px;
+  }
+
+  .CounterLabel {
+    font-weight: 700;
+    font-size: calc-rem(12);
+    text-transform: uppercase;
+    line-height: 1.25;
+  }
+
+  .InputNumberWrapper {
+    margin-left: auto;
+  }
+
+  .Btns {
+    margin-top: 19px;
+  }
+
+  .Btn {
+    line-height: 1;
+    padding-left: 15px;
+    padding-right: 7px;
+    padding-bottom: 13px;
+
+    &.type_submit {
+      margin-left: auto;
+    }
+  }
+}
