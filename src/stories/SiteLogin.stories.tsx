@@ -11,7 +11,11 @@ export default {
   component: SiteLogin,
 } as ComponentMeta<typeof SiteLogin>;
 
-const Template: ComponentStory<typeof SiteLogin> = (args) => <SiteLogin {...args} />;
+const Template: ComponentStory<typeof SiteLogin> = (args) => {
+  return <div style = {{ maxWidth: '380px' }}>
+    <SiteLogin {...args}/>
+  </div>
+};
 
 export const DefaultSiteLogin = Template.bind({});
 const DefaultSiteLoginProps: SiteLoginProps = {

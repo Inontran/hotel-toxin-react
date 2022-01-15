@@ -54,4 +54,8 @@ const Checkbox = ({
 
 };
 
+export {
+  CheckboxProps,
+  CheckboxThemes,
+}
 export default Checkbox;

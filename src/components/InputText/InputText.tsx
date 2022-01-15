@@ -69,7 +69,7 @@ class InputText extends React.Component<InputTextProps> {
     const {
       theme = []
     } = this.props;
-    const blockClasses = [styles.Dropdown];
+    const blockClasses = [styles.InputText];
 
     if (theme.indexOf(InputTextThemes.subscription) != -1) {
       blockClasses.push(styles.theme_subscription);

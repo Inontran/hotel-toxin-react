@@ -14,7 +14,7 @@ export default {
 
 
 const Template: ComponentStory<typeof RoomReservation> = (args) => {
-  return <div style = {{ width: '380px' }}>
+  return <div style = {{ maxWidth: '380px' }}>
     <RoomReservation {...args}/>
   </div>
 };
