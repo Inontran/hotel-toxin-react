@@ -13,10 +13,7 @@ const Radio = ({
   ...props
 }: RadioProps) => {
   return (
-    <div
-      className = { styles.Radio }
-      { ...props }
-    >
+    <div className = { styles.Radio }>
       <label className = { styles.Wrapper }>
         <input className = { styles.Input }
           type = { inputType }

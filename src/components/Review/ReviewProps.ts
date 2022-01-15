@@ -20,7 +20,7 @@ interface ReviewProps {
   /**
    * Когда опубликовали отзыв.
    */
-  datetime: string,
+  datetime: Date,
 
   /**
    * Текст отзыва.

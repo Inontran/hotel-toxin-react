@@ -15,12 +15,8 @@ const Review = ({
   ...props
 }: ReviewProps) => {
   return (
-    <article
-      className = { styles.Review }
-    >
-      <header
-        className = { styles.Header }
-      >
+    <article className = { styles.Review }>
+      <header className = { styles.Header }>
         <div className = { styles.AvatarWrapper }>
           <img
             className = { styles.Avatar }
@@ -35,8 +31,8 @@ const Review = ({
             datetime &&
             <time
               className = { styles.Time }
-              dateTime = { datetime }
-            >{datetime}</time>
+              dateTime = { datetime.toString() }
+            >{datetime.toLocaleString()}</time>
           }
         </div>
       </header>
@@ -50,4 +46,7 @@ const Review = ({
   );
 };
 
+export {
+  ReviewProps,
+}
 export default Review;

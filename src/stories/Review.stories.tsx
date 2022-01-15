@@ -2,7 +2,9 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import '../global-styles/global.scss';
-import Review from '../components/Review/Review';
+import Review, {
+  ReviewProps,
+} from '../components/Review/Review';
 
 export default {
   title: 'Example/Components/Review',
@@ -13,12 +15,14 @@ export default {
 const Template: ComponentStory<typeof Review> = (args) => <Review {...args} />;
 
 export const DefaultReview = Template.bind({});
-DefaultReview.args = {
+const DefaultReviewProps: ReviewProps = {
   username: 'Мурад Сарафанов',
-  datetime: '5 дней назад',
+  datetime: new Date('2022-01-11'),
   textReview: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.',
   likeBtnProps: {
     value: 10,
     isLike: true,
   }
 };
+
+DefaultReview.args = DefaultReviewProps;

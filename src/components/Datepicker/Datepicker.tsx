@@ -39,14 +39,14 @@ class Datepicker extends React.Component<DatepickerProps, DatepickerState> {
             <div className = { styles.Btn + ' ' + styles.Btn_type_reset }>
               <Button
                 text = 'Очистить'
-                onClick = { this.onResetButtonClick }
+                onClick = { this.handlerResetButtonClick }
               />
             </div>
           }
           <div className = { styles.Btn + ' ' + styles.Btn_type_submit }>
             <Button
               text = 'Применить'
-              onClick = { this.onSubmitButtonClick }
+              onClick = { this.handlerSubmitButtonClick }
             />
           </div>
         </div>
@@ -81,7 +81,7 @@ class Datepicker extends React.Component<DatepickerProps, DatepickerState> {
       });
 
       this.setState({
-        isResetBtnVisible: !!this.airDatepicker.selectedDates.length,
+        isResetBtnVisible: this.airDatepicker.selectedDates.length ? true : false,
       });
     }
   }
@@ -108,12 +108,12 @@ class Datepicker extends React.Component<DatepickerProps, DatepickerState> {
     return isChangedPropState;
   }
 
-  private onResetButtonClick = () => {
+  private handlerResetButtonClick = () => {
     this.airDatepicker.clear();
     this.props.resetCallback && this.props.resetCallback();
   };
 
-  private onSubmitButtonClick = () => {
+  private handlerSubmitButtonClick = () => {
     this.props.submitCallback && this.props.submitCallback(this.airDatepicker.selectedDates);
   };
 }

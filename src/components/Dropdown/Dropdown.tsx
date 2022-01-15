@@ -32,20 +32,20 @@ class Dropdown extends React.Component<DropdownProps, DropdownState> {
         className = { blockClasses.join(' ') }
         ref = { this.dropdownRef }
         tabIndex = { this.props.tabIndex || 1 }
-        onBlur = { this.handlerDropdownBlur }
+        onBlur = { this.hideDropdown }
       >
         <div className = { styles.InputWrapper }>
           <InputText
             theme = { this.getInputClasses() }
             label = { this.props.label }
             readOnly = { true }
-            onClick = { this.handlerButtonClick }
+            onClick = { this.toggleDropdown }
             {...this.props.inputTextProps}
           />
           <button
             className = { styles.Arrow }
             type = 'button'
-            onClick = { this.handlerButtonClick }
+            onClick = { this.toggleDropdown }
           ></button>
         </div>
         {
@@ -80,14 +80,13 @@ class Dropdown extends React.Component<DropdownProps, DropdownState> {
     }
   }
 
-  private handlerButtonClick = (event: React.MouseEvent) => {
-    event.preventDefault();
+  private toggleDropdown = () => {
     this.setState({
       isShow: !this.state.isShow,
     });
   };
 
-  private handlerDropdownBlur = (event: React.FocusEvent) => {
+  private hideDropdown = (event: React.FocusEvent) => {
     // условие работает неправильно при выборе даты следующего или предыдущего месяца в календаре.
     // возможно из-за того, что ячейка с датой удаляется из DOM после клика.
     if (!event.currentTarget.contains(event.relatedTarget)) {
@@ -98,15 +97,19 @@ class Dropdown extends React.Component<DropdownProps, DropdownState> {
   };
 
   private getBlockClasses(): string[]{
+    const {
+      theme = []
+    } = this.props;
     const blockClasses = [styles.Dropdown];
-    const hasThemeWithDates = this.props.theme?.indexOf(DropdownThemes.withDates) !== undefined
-      && this.props.theme?.indexOf(DropdownThemes.withDates) >= 0;
+
+    const hasThemeWithDates = theme.indexOf(DropdownThemes.withDates) !== undefined
+      && theme.indexOf(DropdownThemes.withDates) >= 0;
     if (hasThemeWithDates) {
       blockClasses.push(styles.withDates);
     }
 
-    const hasThemeAlignRight = this.props.theme?.indexOf(DropdownThemes.alignRight) !== undefined
-      && this.props.theme?.indexOf(DropdownThemes.alignRight) >= 0;
+    const hasThemeAlignRight = theme.indexOf(DropdownThemes.alignRight) !== undefined
+      && theme.indexOf(DropdownThemes.alignRight) >= 0;
     if (hasThemeAlignRight) {
       blockClasses.push(styles.align_right);
     }
@@ -119,9 +122,12 @@ class Dropdown extends React.Component<DropdownProps, DropdownState> {
   }
 
   private getInputClasses(): InputTextThemes[] {
+    const {
+      theme = []
+    } = this.props;
     const inputTextModifiers = [InputTextThemes.dropdown];
-    const hasThemeWithDates = this.props.theme?.indexOf(DropdownThemes.withDates) !== undefined
-      && this.props.theme?.indexOf(DropdownThemes.withDates) >= 0;
+    const hasThemeWithDates = theme.indexOf(DropdownThemes.withDates) !== undefined
+      && theme.indexOf(DropdownThemes.withDates) >= 0;
     
     if ( ! hasThemeWithDates && this.state.isShow) {
       inputTextModifiers.push(InputTextThemes.dropdown_activated);

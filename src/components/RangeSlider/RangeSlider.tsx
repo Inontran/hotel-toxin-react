@@ -31,9 +31,7 @@ class RangeSlider extends React.Component<RangeSliderProps, RangeSliderState> {
     } = this.props;
 
     return (
-      <div
-        className = { styles.RangeSlider }
-      >
+      <div className = { styles.RangeSlider }>
         <div className = { styles.LabelWrapper }>
           {
             label &&
@@ -46,10 +44,12 @@ class RangeSlider extends React.Component<RangeSliderProps, RangeSliderState> {
             </div>
           }
           <div className = { styles.FormattedRangePrice }>
-            { formatPrice(this.state.startVal) + ' - ' + formatPrice(this.state.endVal) }
+            { formatPrice(this.state.startVal) }
+            {
+              this.state.endVal !== undefined && ' - ' + formatPrice(this.state.endVal)
+            }
           </div>
         </div>
-
         <ReactSlider
           className = { styles.Slider }
           thumbClassName = { styles.Handle }
@@ -73,7 +73,6 @@ class RangeSlider extends React.Component<RangeSliderProps, RangeSliderState> {
           name = 'max-val'
           value = {this.state.endVal}
         />
-
         {
           textBottom &&
           <p className = { styles.Text }>{textBottom}</p>

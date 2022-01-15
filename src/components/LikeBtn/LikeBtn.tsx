@@ -4,13 +4,13 @@ import LikeBtnProps from './LikeBtnProps';
 import styles from './LikeBtn.module.scss';
 
 class LikeBtn extends React.PureComponent<LikeBtnProps> {
-  static defaultProps: LikeBtnProps = {
-    value: 0,
-    name: 'like',
-    isLike: false,
-  };
-
   render() {
+    const {
+      value = 0,
+      name = 'like',
+      isLike,
+    } = this.props;
+
     return (
       <label
         className = { styles.LikeBtn }
@@ -18,12 +18,12 @@ class LikeBtn extends React.PureComponent<LikeBtnProps> {
         <input
           className = { styles.Input }
           type = 'checkbox'
-          value = { this.props.value }
-          name = { this.props.name }
-          checked = { this.props.isLike }
+          value = { value }
+          name = { name }
+          checked = { isLike }
         />
         <span className = { styles.View }>
-          <span className = { styles.Amount }>{this.props.value}</span>
+          <span className = { styles.Amount }>{value}</span>
         </span>
       </label>
     );

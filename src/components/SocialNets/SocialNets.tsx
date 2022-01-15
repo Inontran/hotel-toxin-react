@@ -8,10 +8,7 @@ const SocialNets = ({
   ...props
 }: SocialNetsProps) => {
   return (
-    <ul
-      className = { styles.SocialNets }
-      { ...props }
-    >
+    <ul className = { styles.SocialNets }>
       {
         items.map((item) => {
           return (

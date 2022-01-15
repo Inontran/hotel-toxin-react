@@ -148,7 +148,7 @@ class RoomReservation extends React.PureComponent<RoomReservationProps, RoomRese
   };
 
   private getCountDaysBetweenDates(dateStart: Date, dateEnd: Date): number {
-    if (!dateStart || !dateEnd) {
+    if (!dateEnd) {
       return 0;
     }
 
@@ -159,12 +159,12 @@ class RoomReservation extends React.PureComponent<RoomReservationProps, RoomRese
   private calcTotalPrice = (countDaysInRoom: number = this.state.countDaysInRoom): number => {
     const {
       roomPrice,
-      listService,
+      listService = [],
     } = this.props;
 
     let totalPrice = countDaysInRoom * roomPrice;
 
-    listService?.forEach((service) => {
+    listService.forEach((service) => {
       totalPrice += service.price;
     });
 

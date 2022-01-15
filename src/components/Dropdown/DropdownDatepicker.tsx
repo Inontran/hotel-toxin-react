@@ -35,8 +35,8 @@ class DropdownDatepicker extends React.Component<DropdownDatepickerProps, Dropdo
       }}
     >
       <Datepicker
-        resetCallback = { this.onDatepickerReset }
-        submitCallback = { this.onDatepickerSubmit }
+        resetCallback = { this.handlerDatepickerReset }
+        submitCallback = { this.handlerDatepickerSubmit }
         minDate = { this.props.minDate }
         onChange = { this.props.onChange }
       />
@@ -55,14 +55,14 @@ class DropdownDatepicker extends React.Component<DropdownDatepickerProps, Dropdo
     return isChangedPropState;
   }
 
-  private onDatepickerReset = () => {
+  private handlerDatepickerReset = () => {
     this.setState({
       isShow: false,
       formattedDatesRange: '',
     });
   };
 
-  private onDatepickerSubmit = (selectedDates: Date[]) => {
+  private handlerDatepickerSubmit = (selectedDates: Date[]) => {
     if (selectedDates.length !== 2) {
       return;
     }

@@ -87,7 +87,7 @@ class Header extends React.PureComponent<HeaderProps, HeaderState> {
                 className = { styles.IconBtn + ' ' + styles.profile }
                 type = 'button'
                 title = 'Войти/Зарегистрироваться'
-                onClick = { this.handlerToggleAuthBtnsClick }
+                onClick = { this.toggleAuthBtns }
               >
                 <img
                   src = { require('../../shared/img/user-icon.svg') }
@@ -118,7 +118,7 @@ class Header extends React.PureComponent<HeaderProps, HeaderState> {
             className = { styles.IconBtn + ' ' + styles.type_menu }
             type = 'button'
             title = 'Меню'
-            onClick = { this.handlerBtnMenuClick }
+            onClick = { this.toggleMainMenu }
           >
             <img
               src = { require('../../shared/img/menu-icon.svg') }
@@ -130,13 +130,13 @@ class Header extends React.PureComponent<HeaderProps, HeaderState> {
     );
   }
 
-  private handlerBtnMenuClick = () => {
+  private toggleMainMenu = () => {
     this.setState({
       isShowMainMenu: !this.state.isShowMainMenu,
     });
   };
 
-  private handlerToggleAuthBtnsClick = () => {
+  private toggleAuthBtns = () => {
     this.setState({
       isShowAuthBtns: !this.state.isShowAuthBtns,
     });

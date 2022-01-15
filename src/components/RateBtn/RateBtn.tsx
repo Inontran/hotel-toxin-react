@@ -20,9 +20,7 @@ class RateBtn extends React.Component<RateBtnProps, RateBtnState> {
     } = this.props;
 
     return (
-      <div
-        className = { styles.RateBtn }
-      >
+      <div className = { styles.RateBtn }>
         <input
           className = { styles.Input }
           type = 'hidden'
@@ -37,7 +35,7 @@ class RateBtn extends React.Component<RateBtnProps, RateBtnState> {
               value = { i }
               type = 'button'
               disabled = { disabled }
-              onClick = { this.onButtonClick }
+              onClick = { this.handlerBtnClick }
             ></button>;
           })
         }
@@ -57,7 +55,7 @@ class RateBtn extends React.Component<RateBtnProps, RateBtnState> {
     return isChangedPropState;
   }
 
-  private onButtonClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+  private handlerBtnClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     const btn = event.target as HTMLButtonElement;
     let newValue = 0;
     if (btn.value === '1' && this.state.value === 1) {

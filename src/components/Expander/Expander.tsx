@@ -27,7 +27,7 @@ class Expander extends React.Component<ExpanderProps, ExpanderState> {
         <button 
           className = { styles.Btn }
           type = 'button'
-          onClick = { this.handleBtnClick }
+          onClick = { this.toggleExpander }
         >
           <span className = { styles.BtnText }>{this.props.text}</span>
           <span className = { styles.BtnArrow }></span>
@@ -51,7 +51,7 @@ class Expander extends React.Component<ExpanderProps, ExpanderState> {
     return isChangedPropState;
   }
 
-  private handleBtnClick = () => {
+  private toggleExpander = () => {
     this.setState({
       isOpen: !this.state.isOpen,
     });

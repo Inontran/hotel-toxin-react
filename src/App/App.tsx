@@ -1,6 +1,10 @@
 import React from 'react';
 
-import Button from '../components/Button/Button';
+import Button, {
+  ButtonThemes,
+  ButtonSizes,
+  ButtonWidth,
+} from '../components/Button/Button';
 import Checkbox from '../components/Checkbox/Checkbox';
 
 import classes from './App.module.scss';
@@ -12,17 +16,38 @@ const App = () => {
       <div>
         <div style = {{ width: '300px' }}>
           <h2>Buttons</h2>
-          <Button text = 'Click me' href = '/'/>
+          <Button 
+            text = 'Click me'
+            href = '/'
+          />
           <br />
-          <Button text = 'Click me' theme = {['purple']}/>
+          <Button 
+            text = 'Click me'
+            theme = {[ButtonThemes.purple]}
+          />
           <br />
-          <Button text = 'Click me' theme = {['purple']} size = 'md'/>
+          <Button 
+            text = 'Click me'
+            theme = {[ButtonThemes.purple]}
+            size = { ButtonSizes.md }
+          />
           <br />
-          <Button text = 'Click me' theme = {['white']}/>
+          <Button
+            text = 'Click me'
+            theme = {[ButtonThemes.white]}
+          />
           <br />
-          <Button text = 'Click me' theme = {['purple']} width = 'full-wide'/>
+          <Button 
+            text = 'Click me'
+            theme = {[ButtonThemes.purple]}
+            width = { ButtonWidth.fullWidth }
+          />
           <br />
-          <Button text = 'Click me' theme = {['purple', 'theme_arrow']} width = 'full-wide'/>
+          <Button 
+            text = 'Click me' 
+            theme = {[ButtonThemes.purple, ButtonThemes.arrow]}
+            width = { ButtonWidth.fullWidth }
+          />
         </div>
 
         <div style = {{ width: '300px' }}>

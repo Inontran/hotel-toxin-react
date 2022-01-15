@@ -22,7 +22,7 @@ class InputNumber extends React.Component<InputNumberProps, InputNumberState>{
       max,
       min,
       step = InputNumber.defaultProps.step,
-      readonly,
+      readonly = true,
     } = this.props;
 
     return (
@@ -32,7 +32,7 @@ class InputNumber extends React.Component<InputNumberProps, InputNumberState>{
         <button
           className = { styles.Btn }
           type = 'button'
-          onClick = { this.onBtnClick }
+          onClick = { this.handlerBtnClick }
           value = '-'
           disabled = { this.state.disabledDecreasingBtn }
         >
@@ -51,7 +51,7 @@ class InputNumber extends React.Component<InputNumberProps, InputNumberState>{
         <button
           className = { styles.Btn }
           type = 'button'
-          onClick = { this.onBtnClick }
+          onClick = { this.handlerBtnClick }
           value = '+'
           disabled = { this.state.disabledIncreasingBtn }
         >
@@ -81,8 +81,25 @@ class InputNumber extends React.Component<InputNumberProps, InputNumberState>{
     return isChangedPropState;
   }
 
-  private onBtnClick = (event: React.MouseEvent) => {
+  private handlerBtnClick = (event: React.MouseEvent) => {
     const btn = event.currentTarget as HTMLButtonElement;
+    switch (btn.value) {
+      case '-': {
+        this.changeValue(true);
+        break;
+      }
+
+      case '+': {
+        this.changeValue();
+        break;
+      }
+    }
+  };
+
+  /**
+   * @param decrease Если параметр равен 'true', то уменьшить текущее значение на 1 шаг. Иначе увеличить на 1 шаг.
+   */
+  private changeValue = (decrease: boolean = false) => {
     const newState: InputNumberState = {
       value: 0,
       disabledDecreasingBtn: false,
@@ -92,33 +109,26 @@ class InputNumber extends React.Component<InputNumberProps, InputNumberState>{
       max,
       min,
       step = InputNumber.defaultProps.step,
-      value,
     } = this.props;
-
-    switch (btn.value) {
-      case '-': {
-        newState.value = this.state.value - step;
-        if (min !== undefined && newState.value <= min) {
-          newState.value = min;
-          newState.disabledDecreasingBtn = true;
-        }
-        break;
+    
+    if (decrease) {
+      newState.value = this.state.value - step;
+      if (min !== undefined && newState.value <= min) {
+        newState.value = min;
+        newState.disabledDecreasingBtn = true;
       }
-
-      case '+': {
-        newState.value = this.state.value + step;
-        if (max !== undefined && newState.value >= max) {
-          newState.value = max;
-          newState.disabledIncreasingBtn = true;
-        }
-        break;
+    } else {
+      newState.value = this.state.value + step;
+      if (max !== undefined && newState.value >= max) {
+        newState.value = max;
+        newState.disabledIncreasingBtn = true;
       }
     }
 
     if (this.state.value !== newState.value) {
       this.setState(newState);
     }
-  };
+  }
 
   private setStateFromProps(props: InputNumberProps) {
     let initialValue = props.value || this.props.value || InputNumber.defaultProps.value;

@@ -9,43 +9,33 @@ const List = ({
   theme = [],
   ...props
 }: ListProps) => {
-  const classes = [styles.List];
+  const blockClasses = [styles.List];
 
   if (theme.indexOf(ListThemes.withGrayItems) != -1) {
-    classes.push(styles.withGrayItems);
+    blockClasses.push(styles.withGrayItems);
   }
   if (theme.indexOf(ListThemes.withBigDots) != -1) {
-    classes.push(styles.withBigDots);
+    blockClasses.push(styles.withBigDots);
   }
 
   return (
-    <ul
-      className = { classes.join(' ') }
-      { ...props }
-    >
+    <ul className = { blockClasses.join(' ') }>
       {
-        items.map((item, index) => {
-          if (item.href) {
-            return (
-              <li
-                className = { styles.Item }
-                key = { index }
-              >
-                <a href = { item.href } className = { styles.ItemLink }>
+        items.map((item) => {
+          return (
+            <li
+              className = { styles.Item }
+              key = { Math.random() * 1000 }
+            >
+              {
+                item.href
+                ? <a href = { item.href } className = { styles.ItemLink }>
                   {item.text}
                 </a>
-              </li>
-            );
-          } else {
-            return (
-              <li
-                className = { styles.Item }
-                key = { index }
-              >
-                { item.text }
-              </li>
-            );
-          }
+                : item.text
+              }
+            </li>
+          );
         })
       }
     </ul>
